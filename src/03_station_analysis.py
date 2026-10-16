@@ -45,6 +45,32 @@ plt.savefig("outputs/top_10_stations_by_bike_availability.png", dpi=300)
 plt.show()
 
 
+# Plot the bottom 10 stations by average available bikes
+
+# Create a figure
+plt.figure(figsize=(12, 6))
+
+# Select the bottom 10 stations by average available bikes
+bottom_10_stations = station_avg.sort_values(ascending=True).head(10)
+
+# Draw the bar chart
+plt.bar(bottom_10_stations.index, bottom_10_stations.values)
+
+# Add labels
+plt.title("Bottom 10 Stations by Average Available Bikes")
+plt.xlabel("Station")
+plt.ylabel("Average Available Bikes")
+
+plt.xticks(rotation=45, ha="right")
+
+plt.tight_layout()
+
+# Save the graph
+plt.savefig("outputs/bottom_10_stations_by_bike_availability.png", dpi=300)
+
+plt.show()
+
+
 
 # Calculate average available bike stands by station
 print("\n=== Average Available Bike Stands by Station ===")
