@@ -80,7 +80,7 @@ print(station_stands_avg.round(2))
 
 # Find stations with the highest and lowest average available bike stands
 print("\n=== Highest Average Available Bike Stands ===")
-print(station_stands_avg.sort_values(ascending=False).head(5).round(2))
+print(station_stands_avg.sort_values(ascending=False).head(10).round(2))
 
 print("\n=== Lowest Average Available Bike Stands ===")
-print(station_stands_avg.sort_values().head(5).round(2))
+print(station_stands_avg.sort_values().head(10).round(2))
