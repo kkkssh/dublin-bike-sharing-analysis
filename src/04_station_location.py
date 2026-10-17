@@ -29,13 +29,24 @@ stations = df[
 print("\n=== Number of Unique Stations ===")
 print(len(stations))
 
+# Calculate average available bikes by station
+station_avg = df.groupby("STATION ID")["AVAILABLE_BIKES"].mean()
+
+# Add average available bikes to station locations
+stations = stations.merge(
+    station_avg.rename("AVG_AVAILABLE_BIKES"),
+    on="STATION ID"
+)
+
 # Draw the scatter plot
-plt.scatter(stations["LONGITUDE"], stations["LATITUDE"])
+plt.scatter(stations["LONGITUDE"], stations["LATITUDE"], c=stations["AVG_AVAILABLE_BIKES"])
 
 # Add labels
-plt.title("Dublin Bike Station Locations")
+plt.title("Dublin Bike Station Locations by Average Bike Availability")
 plt.xlabel("Longitude")
 plt.ylabel("Latitude")
+
+plt.colorbar(label="Average Available Bikes")
 
 plt.tight_layout()
 
@@ -43,3 +54,5 @@ plt.tight_layout()
 plt.savefig("outputs/dublin_bike_station_locations.png", dpi=300)
 
 plt.show()
+
+
