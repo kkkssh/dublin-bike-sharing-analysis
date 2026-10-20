@@ -52,15 +52,15 @@ The dataset contains 1,391 records for each of the 114 stations. A capacity inco
 
 #### Average Available Bikes by Hour
 ![Average Available Bikes by Hour](outputs/hourly_bike_availability.png)
-- Average available bikes peaked at 4 AM.
+- Average bike availability peaked at 4 AM (12.49 bikes).
 - Average bike availability was relatively high between 1 AM and 5 AM.
-- Average available bikes reached their lowest levels between 8 AM and 9 AM.
+- Average available bikes reached their lowest levels between 8 AM and 9 AM (11.43 bikes).
 
 
 #### Average Available Bike Stands by Hour
 ![Average Available Bike Stands by Hour](outputs/hourly_bike_stands_availability.png)
-- Average available bike stands peaked at 5 PM.
-- Average available bike stands reached their lowest levels between 1 AM and 5 AM.
+- Average available bike stands peaked at 5 PM (20.42 stands).
+- Average available bike stands reached their lowest levels between 3 AM and 4 AM (19.45 stands).
 
 <br>
 
