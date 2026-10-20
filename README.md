@@ -86,6 +86,37 @@ The dataset contains 1,391 records for each of the 114 stations. A capacity inco
 - The map shows the locations of 114 Dublin bike stations.
 - Colours represent the average number of available bikes at each station.
 
+<br>
+
+### Interactive Bike Station Map
+The interactive map displays 114 Dublin bike stations. Marker colours represent average bike availability, and clicking a marker shows the station name and average number of available bikes in February 2024.
+
+![Interactive Bike Station Map](screenshots/dublin_bike_map.png)
+![Station Details](screenshots/dublin_bike_station_popup.png)
+- 🔴 Red: Below 10 bikes
+- 🟠 Orange: 10 to less than 20 bikes
+- 🟢 Green: 20 bikes or more
+
+#### How to View the Map Locally
+
+1. Clone or download this repository.
+2. Install the required libraries:
+
+   ```bash
+   pip install pandas folium
+   ```
+
+3. Run `src/05_interactive_map.py` from the project root to generate the HTML map.
+4. Start a local server from the project root:
+
+   ```bash
+   python -m http.server 8000
+   ```
+
+5. Open [http://localhost:8000/outputs/dublin_bike_map_average.html](http://localhost:8000/outputs/dublin_bike_map_average.html) in your browser.
+
+Click a station marker to view its name and average available bikes.
+
 
 ## Key Findings
 - Average bike availability was relatively high during the early morning, peaking at 4 AM.
@@ -104,6 +135,7 @@ The dataset contains 1,391 records for each of the 114 stations. A capacity inco
 - Python
 - Pandas
 - Matplotlib
+- Folium
 
 
 ## Data Source
