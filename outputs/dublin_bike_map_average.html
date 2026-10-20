@@ -1,0 +1,3886 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_425869c43c2d26c47c96ad4c7aefc21e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 210px;
+    background-color: white;
+    border: 2px solid grey;
+    z-index: 9999;
+    padding: 10px;
+    font-size: 14px;
+">
+    <b>Average Available Bikes</b><br>
+    <span style="color:red;">●</span> Below 10 bikes<br>
+    <span style="color:orange;">●</span> 10 to less than 20 bikes<br>
+    <span style="color:green;">●</span> 20 bikes or more
+</div>
+    
+            <div class="folium-map" id="map_425869c43c2d26c47c96ad4c7aefc21e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_425869c43c2d26c47c96ad4c7aefc21e = L.map(
+                "map_425869c43c2d26c47c96ad4c7aefc21e",
+                {
+                    center: [53.35, -6.26],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f34355fd776e37ef079d61c5ec1b735e = L.tileLayer(
+                "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u00a9 Stadia Maps \u00a9 OpenStreetMap contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f34355fd776e37ef079d61c5ec1b735e.addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+            var circle_marker_5706e9e139828943946386ab3ab5463e = L.circleMarker(
+                [53.3409, -6.2625],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_23657918e3a065cffed132fee9ac2cf1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ad63f6c399f3b8c5f1a9c15ad632944f = $(`<div id="html_ad63f6c399f3b8c5f1a9c15ad632944f" style="width: 100.0%; height: 100.0%;">CLARENDON ROW: 12.4 bikes</div>`)[0];
+                popup_23657918e3a065cffed132fee9ac2cf1.setContent(html_ad63f6c399f3b8c5f1a9c15ad632944f);
+            
+        
+
+        circle_marker_5706e9e139828943946386ab3ab5463e.bindPopup(popup_23657918e3a065cffed132fee9ac2cf1)
+        ;
+
+        
+    
+    
+            circle_marker_5706e9e139828943946386ab3ab5463e.bindTooltip(
+                `<div>
+                     CLARENDON ROW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a24ecc665a333db774223a4ce80d3447 = L.circleMarker(
+                [53.3568, -6.26814],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_1d76289803b6f7b9810ef1f870442839 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_25226ca5e85e650b0e5ed836dcbafd6e = $(`<div id="html_25226ca5e85e650b0e5ed836dcbafd6e" style="width: 100.0%; height: 100.0%;">BLESSINGTON STREET: 6.1 bikes</div>`)[0];
+                popup_1d76289803b6f7b9810ef1f870442839.setContent(html_25226ca5e85e650b0e5ed836dcbafd6e);
+            
+        
+
+        circle_marker_a24ecc665a333db774223a4ce80d3447.bindPopup(popup_1d76289803b6f7b9810ef1f870442839)
+        ;
+
+        
+    
+    
+            circle_marker_a24ecc665a333db774223a4ce80d3447.bindTooltip(
+                `<div>
+                     BLESSINGTON STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a9ed39224483258bf3836da96cebbb5e = L.circleMarker(
+                [53.3512, -6.26986],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_e66a6db96d7c4059a1c6ee961d9bde30 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_288a5f52148cdb2d23de65284e6761cb = $(`<div id="html_288a5f52148cdb2d23de65284e6761cb" style="width: 100.0%; height: 100.0%;">BOLTON STREET: 9.2 bikes</div>`)[0];
+                popup_e66a6db96d7c4059a1c6ee961d9bde30.setContent(html_288a5f52148cdb2d23de65284e6761cb);
+            
+        
+
+        circle_marker_a9ed39224483258bf3836da96cebbb5e.bindPopup(popup_e66a6db96d7c4059a1c6ee961d9bde30)
+        ;
+
+        
+    
+    
+            circle_marker_a9ed39224483258bf3836da96cebbb5e.bindTooltip(
+                `<div>
+                     BOLTON STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_38c5c98e7ac9c54fcb6aa182b9955a1c = L.circleMarker(
+                [53.3469, -6.27298],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_fdba3bc9ebbb376af2918149a9a63279 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2186f47767ee8e45cbabdc1387573ebc = $(`<div id="html_2186f47767ee8e45cbabdc1387573ebc" style="width: 100.0%; height: 100.0%;">GREEK STREET: 10.1 bikes</div>`)[0];
+                popup_fdba3bc9ebbb376af2918149a9a63279.setContent(html_2186f47767ee8e45cbabdc1387573ebc);
+            
+        
+
+        circle_marker_38c5c98e7ac9c54fcb6aa182b9955a1c.bindPopup(popup_fdba3bc9ebbb376af2918149a9a63279)
+        ;
+
+        
+    
+    
+            circle_marker_38c5c98e7ac9c54fcb6aa182b9955a1c.bindTooltip(
+                `<div>
+                     GREEK STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7d729e321424c8ca4132a964f07142cb = L.circleMarker(
+                [53.3307, -6.26018],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_304535897059c82e3f8db5317ae17d82 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1621a08b1818d3c643a8c67076e0f99b = $(`<div id="html_1621a08b1818d3c643a8c67076e0f99b" style="width: 100.0%; height: 100.0%;">CHARLEMONT PLACE: 21.2 bikes</div>`)[0];
+                popup_304535897059c82e3f8db5317ae17d82.setContent(html_1621a08b1818d3c643a8c67076e0f99b);
+            
+        
+
+        circle_marker_7d729e321424c8ca4132a964f07142cb.bindPopup(popup_304535897059c82e3f8db5317ae17d82)
+        ;
+
+        
+    
+    
+            circle_marker_7d729e321424c8ca4132a964f07142cb.bindTooltip(
+                `<div>
+                     CHARLEMONT PLACE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a1e411154d686a616cddc338e47ec718 = L.circleMarker(
+                [53.3434, -6.27012],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_96661a7894a7578a5dcd794fa5424ea3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_99f96accd9d24b28e28a7958393a44f6 = $(`<div id="html_99f96accd9d24b28e28a7958393a44f6" style="width: 100.0%; height: 100.0%;">CHRISTCHURCH PLACE: 5.0 bikes</div>`)[0];
+                popup_96661a7894a7578a5dcd794fa5424ea3.setContent(html_99f96accd9d24b28e28a7958393a44f6);
+            
+        
+
+        circle_marker_a1e411154d686a616cddc338e47ec718.bindPopup(popup_96661a7894a7578a5dcd794fa5424ea3)
+        ;
+
+        
+    
+    
+            circle_marker_a1e411154d686a616cddc338e47ec718.bindTooltip(
+                `<div>
+                     CHRISTCHURCH PLACE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_23d09ebd53a1834b2e76ae9b6a3c875a = L.circleMarker(
+                [53.3436, -6.27507],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_f7a3ae17c5ce1d34249d30d32d8354ae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bd8019af58aa03b400f492a1bb1a71a5 = $(`<div id="html_bd8019af58aa03b400f492a1bb1a71a5" style="width: 100.0%; height: 100.0%;">HIGH STREET: 5.9 bikes</div>`)[0];
+                popup_f7a3ae17c5ce1d34249d30d32d8354ae.setContent(html_bd8019af58aa03b400f492a1bb1a71a5);
+            
+        
+
+        circle_marker_23d09ebd53a1834b2e76ae9b6a3c875a.bindPopup(popup_f7a3ae17c5ce1d34249d30d32d8354ae)
+        ;
+
+        
+    
+    
+            circle_marker_23d09ebd53a1834b2e76ae9b6a3c875a.bindTooltip(
+                `<div>
+                     HIGH STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ff15cf38dfed13576630c6799cd19840 = L.circleMarker(
+                [53.3479, -6.24805],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_5d643faca2eb53e3bd4f3181c419e12e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_56efa6af25bd3f1363f37d8b0f70aa24 = $(`<div id="html_56efa6af25bd3f1363f37d8b0f70aa24" style="width: 100.0%; height: 100.0%;">CUSTOM HOUSE QUAY: 14.0 bikes</div>`)[0];
+                popup_5d643faca2eb53e3bd4f3181c419e12e.setContent(html_56efa6af25bd3f1363f37d8b0f70aa24);
+            
+        
+
+        circle_marker_ff15cf38dfed13576630c6799cd19840.bindPopup(popup_5d643faca2eb53e3bd4f3181c419e12e)
+        ;
+
+        
+    
+    
+            circle_marker_ff15cf38dfed13576630c6799cd19840.bindTooltip(
+                `<div>
+                     CUSTOM HOUSE QUAY
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_adbe694be8a264a08e6274bb71742a49 = L.circleMarker(
+                [53.343, -6.26358],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_302d67ff62e788b62d91e7148192b8c9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cc9f50bce547fb5c093d65a1a6ef6074 = $(`<div id="html_cc9f50bce547fb5c093d65a1a6ef6074" style="width: 100.0%; height: 100.0%;">EXCHEQUER STREET: 12.6 bikes</div>`)[0];
+                popup_302d67ff62e788b62d91e7148192b8c9.setContent(html_cc9f50bce547fb5c093d65a1a6ef6074);
+            
+        
+
+        circle_marker_adbe694be8a264a08e6274bb71742a49.bindPopup(popup_302d67ff62e788b62d91e7148192b8c9)
+        ;
+
+        
+    
+    
+            circle_marker_adbe694be8a264a08e6274bb71742a49.bindTooltip(
+                `<div>
+                     EXCHEQUER STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fb662265c1a3c6d5f465a4ad201b94f8 = L.circleMarker(
+                [53.344, -6.2668],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_290d6b790e133fe362170fddaa0cc4fa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3e05f4f40427c06489569dbee4879b93 = $(`<div id="html_3e05f4f40427c06489569dbee4879b93" style="width: 100.0%; height: 100.0%;">DAME STREET: 11.6 bikes</div>`)[0];
+                popup_290d6b790e133fe362170fddaa0cc4fa.setContent(html_3e05f4f40427c06489569dbee4879b93);
+            
+        
+
+        circle_marker_fb662265c1a3c6d5f465a4ad201b94f8.bindPopup(popup_290d6b790e133fe362170fddaa0cc4fa)
+        ;
+
+        
+    
+    
+            circle_marker_fb662265c1a3c6d5f465a4ad201b94f8.bindTooltip(
+                `<div>
+                     DAME STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_38829902a47c51780266d9c00b86e337 = L.circleMarker(
+                [53.3343, -6.2585],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_6a8fae0b8205841b5143dc5ed2556151 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_63931f6f7460dc373576e988b849f82d = $(`<div id="html_63931f6f7460dc373576e988b849f82d" style="width: 100.0%; height: 100.0%;">EARLSFORT TERRACE: 5.3 bikes</div>`)[0];
+                popup_6a8fae0b8205841b5143dc5ed2556151.setContent(html_63931f6f7460dc373576e988b849f82d);
+            
+        
+
+        circle_marker_38829902a47c51780266d9c00b86e337.bindPopup(popup_6a8fae0b8205841b5143dc5ed2556151)
+        ;
+
+        
+    
+    
+            circle_marker_38829902a47c51780266d9c00b86e337.bindTooltip(
+                `<div>
+                     EARLSFORT TERRACE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b78804cef642a802fb86f87f0f1cff65 = L.circleMarker(
+                [53.3592, -6.26978],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_5bf90ac0f3d0e2a1090366ed0b80e140 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_faf2922b547a7a2c719b221c13205d66 = $(`<div id="html_faf2922b547a7a2c719b221c13205d66" style="width: 100.0%; height: 100.0%;">ECCLES STREET: 5.2 bikes</div>`)[0];
+                popup_5bf90ac0f3d0e2a1090366ed0b80e140.setContent(html_faf2922b547a7a2c719b221c13205d66);
+            
+        
+
+        circle_marker_b78804cef642a802fb86f87f0f1cff65.bindPopup(popup_5bf90ac0f3d0e2a1090366ed0b80e140)
+        ;
+
+        
+    
+    
+            circle_marker_b78804cef642a802fb86f87f0f1cff65.bindTooltip(
+                `<div>
+                     ECCLES STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d1d975507e2e2ea81ce5324dd0e60d5f = L.circleMarker(
+                [53.3361, -6.25282],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_8edc4080a17fe18006dcadc3959c0c60 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_20686f6779e8169c1ccbebbcc0d862ba = $(`<div id="html_20686f6779e8169c1ccbebbcc0d862ba" style="width: 100.0%; height: 100.0%;">FITZWILLIAM SQUARE WEST: 5.3 bikes</div>`)[0];
+                popup_8edc4080a17fe18006dcadc3959c0c60.setContent(html_20686f6779e8169c1ccbebbcc0d862ba);
+            
+        
+
+        circle_marker_d1d975507e2e2ea81ce5324dd0e60d5f.bindPopup(popup_8edc4080a17fe18006dcadc3959c0c60)
+        ;
+
+        
+    
+    
+            circle_marker_d1d975507e2e2ea81ce5324dd0e60d5f.bindTooltip(
+                `<div>
+                     FITZWILLIAM SQUARE WEST
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_34119affafb86b534c193f2ac5c97068 = L.circleMarker(
+                [53.3446, -6.26337],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_7cbbfd3285e111b0d465ad01a8d4b04b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7f55da792018edc197b4b20c8c3cef80 = $(`<div id="html_7f55da792018edc197b4b20c8c3cef80" style="width: 100.0%; height: 100.0%;">FOWNES STREET UPPER: 18.9 bikes</div>`)[0];
+                popup_7cbbfd3285e111b0d465ad01a8d4b04b.setContent(html_7f55da792018edc197b4b20c8c3cef80);
+            
+        
+
+        circle_marker_34119affafb86b534c193f2ac5c97068.bindPopup(popup_7cbbfd3285e111b0d465ad01a8d4b04b)
+        ;
+
+        
+    
+    
+            circle_marker_34119affafb86b534c193f2ac5c97068.bindTooltip(
+                `<div>
+                     FOWNES STREET UPPER
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e3d41bae7a998e9210df5485b38a5a7f = L.circleMarker(
+                [53.3555, -6.26442],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_9a935fdf7a70716ca5442f8e5b17c50e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3480fd953e3469d52615439c5ecf1a08 = $(`<div id="html_3480fd953e3469d52615439c5ecf1a08" style="width: 100.0%; height: 100.0%;">HARDWICKE STREET: 3.6 bikes</div>`)[0];
+                popup_9a935fdf7a70716ca5442f8e5b17c50e.setContent(html_3480fd953e3469d52615439c5ecf1a08);
+            
+        
+
+        circle_marker_e3d41bae7a998e9210df5485b38a5a7f.bindPopup(popup_9a935fdf7a70716ca5442f8e5b17c50e)
+        ;
+
+        
+    
+    
+            circle_marker_e3d41bae7a998e9210df5485b38a5a7f.bindTooltip(
+                `<div>
+                     HARDWICKE STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b1933b142369940b2f401885fc5486f7 = L.circleMarker(
+                [53.3475, -6.25219],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_f1f14e7459d1221340c95323c19148e0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5329f25ec49e9fff2ee3a1972bc68944 = $(`<div id="html_5329f25ec49e9fff2ee3a1972bc68944" style="width: 100.0%; height: 100.0%;">GEORGES QUAY: 13.6 bikes</div>`)[0];
+                popup_f1f14e7459d1221340c95323c19148e0.setContent(html_5329f25ec49e9fff2ee3a1972bc68944);
+            
+        
+
+        circle_marker_b1933b142369940b2f401885fc5486f7.bindPopup(popup_f1f14e7459d1221340c95323c19148e0)
+        ;
+
+        
+    
+    
+            circle_marker_b1933b142369940b2f401885fc5486f7.bindTooltip(
+                `<div>
+                     GEORGES QUAY
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_766b53e702aab3fe68c8f4e9083dc887 = L.circleMarker(
+                [53.3408, -6.26773],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_177053009c188cf1d1dab01643ef84ab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ff604480adb17efeef8e2edf0fd83809 = $(`<div id="html_ff604480adb17efeef8e2edf0fd83809" style="width: 100.0%; height: 100.0%;">GOLDEN LANE: 4.8 bikes</div>`)[0];
+                popup_177053009c188cf1d1dab01643ef84ab.setContent(html_ff604480adb17efeef8e2edf0fd83809);
+            
+        
+
+        circle_marker_766b53e702aab3fe68c8f4e9083dc887.bindPopup(popup_177053009c188cf1d1dab01643ef84ab)
+        ;
+
+        
+    
+    
+            circle_marker_766b53e702aab3fe68c8f4e9083dc887.bindTooltip(
+                `<div>
+                     GOLDEN LANE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ef596d4c9ca56b827b878df083d2edb0 = L.circleMarker(
+                [53.3341, -6.26544],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_9246619489fc2ee004a9f083876e2b18 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d6cc737c892954929c4bce308ab6fd5e = $(`<div id="html_d6cc737c892954929c4bce308ab6fd5e" style="width: 100.0%; height: 100.0%;">GRANTHAM STREET: 13.6 bikes</div>`)[0];
+                popup_9246619489fc2ee004a9f083876e2b18.setContent(html_d6cc737c892954929c4bce308ab6fd5e);
+            
+        
+
+        circle_marker_ef596d4c9ca56b827b878df083d2edb0.bindPopup(popup_9246619489fc2ee004a9f083876e2b18)
+        ;
+
+        
+    
+    
+            circle_marker_ef596d4c9ca56b827b878df083d2edb0.bindTooltip(
+                `<div>
+                     GRANTHAM STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a378b222b8318e77b6d1fd7886365620 = L.circleMarker(
+                [53.3344, -6.24557],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_bddca53bf346051092000ad96c0e6bf1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_87c86da9d333792cf41a0fbc6d86a345 = $(`<div id="html_87c86da9d333792cf41a0fbc6d86a345" style="width: 100.0%; height: 100.0%;">HERBERT PLACE: 9.4 bikes</div>`)[0];
+                popup_bddca53bf346051092000ad96c0e6bf1.setContent(html_87c86da9d333792cf41a0fbc6d86a345);
+            
+        
+
+        circle_marker_a378b222b8318e77b6d1fd7886365620.bindPopup(popup_bddca53bf346051092000ad96c0e6bf1)
+        ;
+
+        
+    
+    
+            circle_marker_a378b222b8318e77b6d1fd7886365620.bindTooltip(
+                `<div>
+                     HERBERT PLACE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_537e4d4dc42fc4ca26b0a3ea7cf513c9 = L.circleMarker(
+                [53.3366, -6.24811],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_4af934ba178acb768d13979ed0c0b2d0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_83deea50461299aa1ff7b4eed2020b42 = $(`<div id="html_83deea50461299aa1ff7b4eed2020b42" style="width: 100.0%; height: 100.0%;">JAMES STREET EAST: 6.2 bikes</div>`)[0];
+                popup_4af934ba178acb768d13979ed0c0b2d0.setContent(html_83deea50461299aa1ff7b4eed2020b42);
+            
+        
+
+        circle_marker_537e4d4dc42fc4ca26b0a3ea7cf513c9.bindPopup(popup_4af934ba178acb768d13979ed0c0b2d0)
+        ;
+
+        
+    
+    
+            circle_marker_537e4d4dc42fc4ca26b0a3ea7cf513c9.bindTooltip(
+                `<div>
+                     JAMES STREET EAST
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_450107f399c8823edb8af59032a93731 = L.circleMarker(
+                [53.3422, -6.25449],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_5a4df974f7eb675047d1402a33b72d8b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3da8d25d64c53f6c3c618eda137935c4 = $(`<div id="html_3da8d25d64c53f6c3c618eda137935c4" style="width: 100.0%; height: 100.0%;">LEINSTER STREET SOUTH: 13.2 bikes</div>`)[0];
+                popup_5a4df974f7eb675047d1402a33b72d8b.setContent(html_3da8d25d64c53f6c3c618eda137935c4);
+            
+        
+
+        circle_marker_450107f399c8823edb8af59032a93731.bindPopup(popup_5a4df974f7eb675047d1402a33b72d8b)
+        ;
+
+        
+    
+    
+            circle_marker_450107f399c8823edb8af59032a93731.bindTooltip(
+                `<div>
+                     LEINSTER STREET SOUTH
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_36174865976961b93b9fa091da8ac988 = L.circleMarker(
+                [53.3459, -6.25461],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_46bf09108f7dac79959b8c2b41370402 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5c089d65173a48b40e1537f8cccf6759 = $(`<div id="html_5c089d65173a48b40e1537f8cccf6759" style="width: 100.0%; height: 100.0%;">TOWNSEND STREET: 12.2 bikes</div>`)[0];
+                popup_46bf09108f7dac79959b8c2b41370402.setContent(html_5c089d65173a48b40e1537f8cccf6759);
+            
+        
+
+        circle_marker_36174865976961b93b9fa091da8ac988.bindPopup(popup_46bf09108f7dac79959b8c2b41370402)
+        ;
+
+        
+    
+    
+            circle_marker_36174865976961b93b9fa091da8ac988.bindTooltip(
+                `<div>
+                     TOWNSEND STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7c1c96d0ef0945d638acccd154a1ee74 = L.circleMarker(
+                [53.3483, -6.25466],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_51622d735b38fa8f3707019fb23351c5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fe0ebfcdc24d61b34cfd4b03c135ec0c = $(`<div id="html_fe0ebfcdc24d61b34cfd4b03c135ec0c" style="width: 100.0%; height: 100.0%;">CUSTOM HOUSE: 19.6 bikes</div>`)[0];
+                popup_51622d735b38fa8f3707019fb23351c5.setContent(html_fe0ebfcdc24d61b34cfd4b03c135ec0c);
+            
+        
+
+        circle_marker_7c1c96d0ef0945d638acccd154a1ee74.bindPopup(popup_51622d735b38fa8f3707019fb23351c5)
+        ;
+
+        
+    
+    
+            circle_marker_7c1c96d0ef0945d638acccd154a1ee74.bindTooltip(
+                `<div>
+                     CUSTOM HOUSE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7cb13d6dac187235d8f0ae60dd551cb0 = L.circleMarker(
+                [53.3521, -6.26053],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_c23fead0f3d8786495a5de60c815b3e8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d44d2363cbf688b697750f59b9d67060 = $(`<div id="html_d44d2363cbf688b697750f59b9d67060" style="width: 100.0%; height: 100.0%;">CATHAL BRUGHA STREET: 13.5 bikes</div>`)[0];
+                popup_c23fead0f3d8786495a5de60c815b3e8.setContent(html_d44d2363cbf688b697750f59b9d67060);
+            
+        
+
+        circle_marker_7cb13d6dac187235d8f0ae60dd551cb0.bindPopup(popup_c23fead0f3d8786495a5de60c815b3e8)
+        ;
+
+        
+    
+    
+            circle_marker_7cb13d6dac187235d8f0ae60dd551cb0.bindTooltip(
+                `<div>
+                     CATHAL BRUGHA STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a35a88d6190cac0e8249b258c156969d = L.circleMarker(
+                [53.3394, -6.24655],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_b252e29c4f09a5b1ca74ca7a6d30a571 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_95df40187bdc7531ce4e07ff69fa6059 = $(`<div id="html_95df40187bdc7531ce4e07ff69fa6059" style="width: 100.0%; height: 100.0%;">MERRION SQUARE EAST: 7.4 bikes</div>`)[0];
+                popup_b252e29c4f09a5b1ca74ca7a6d30a571.setContent(html_95df40187bdc7531ce4e07ff69fa6059);
+            
+        
+
+        circle_marker_a35a88d6190cac0e8249b258c156969d.bindPopup(popup_b252e29c4f09a5b1ca74ca7a6d30a571)
+        ;
+
+        
+    
+    
+            circle_marker_a35a88d6190cac0e8249b258c156969d.bindTooltip(
+                `<div>
+                     MERRION SQUARE EAST
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_41d7335940601006993a5cfcfb985a2b = L.circleMarker(
+                [53.3398, -6.25199],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_c374469f20e7ce2d47b5999fd88383bd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fa40ec464176911477a4b411b544b2db = $(`<div id="html_fa40ec464176911477a4b411b544b2db" style="width: 100.0%; height: 100.0%;">MERRION SQUARE WEST: 8.3 bikes</div>`)[0];
+                popup_c374469f20e7ce2d47b5999fd88383bd.setContent(html_fa40ec464176911477a4b411b544b2db);
+            
+        
+
+        circle_marker_41d7335940601006993a5cfcfb985a2b.bindPopup(popup_c374469f20e7ce2d47b5999fd88383bd)
+        ;
+
+        
+    
+    
+            circle_marker_41d7335940601006993a5cfcfb985a2b.bindTooltip(
+                `<div>
+                     MERRION SQUARE WEST
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9d400155e6540674c59afb9c0f0aa722 = L.circleMarker(
+                [53.3413, -6.25812],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_ea47b7f41520dabad2557fc24e126f86 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4cee36dbcf98a272672b38d16de80f0e = $(`<div id="html_4cee36dbcf98a272672b38d16de80f0e" style="width: 100.0%; height: 100.0%;">MOLESWORTH STREET: 7.8 bikes</div>`)[0];
+                popup_ea47b7f41520dabad2557fc24e126f86.setContent(html_4cee36dbcf98a272672b38d16de80f0e);
+            
+        
+
+        circle_marker_9d400155e6540674c59afb9c0f0aa722.bindPopup(popup_ea47b7f41520dabad2557fc24e126f86)
+        ;
+
+        
+    
+    
+            circle_marker_9d400155e6540674c59afb9c0f0aa722.bindTooltip(
+                `<div>
+                     MOLESWORTH STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0e2f4bf446df251d686fbd4a6dd78a8c = L.circleMarker(
+                [53.3563, -6.25859],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_fbcf77bfc020702c4819ee3d5235bdae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4e8e4a823ae9135e408526cc47bdde9b = $(`<div id="html_4e8e4a823ae9135e408526cc47bdde9b" style="width: 100.0%; height: 100.0%;">MOUNTJOY SQUARE WEST: 11.1 bikes</div>`)[0];
+                popup_fbcf77bfc020702c4819ee3d5235bdae.setContent(html_4e8e4a823ae9135e408526cc47bdde9b);
+            
+        
+
+        circle_marker_0e2f4bf446df251d686fbd4a6dd78a8c.bindPopup(popup_fbcf77bfc020702c4819ee3d5235bdae)
+        ;
+
+        
+    
+    
+            circle_marker_0e2f4bf446df251d686fbd4a6dd78a8c.bindTooltip(
+                `<div>
+                     MOUNTJOY SQUARE WEST
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_db8a331205a3c7722685e6de9c61b7fe = L.circleMarker(
+                [53.3461, -6.268],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_d30a85fec19da1a5dbe3e5e0eb010571 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8a65c793a9c6971759d04518103c5fa6 = $(`<div id="html_8a65c793a9c6971759d04518103c5fa6" style="width: 100.0%; height: 100.0%;">ORMOND QUAY UPPER: 16.5 bikes</div>`)[0];
+                popup_d30a85fec19da1a5dbe3e5e0eb010571.setContent(html_8a65c793a9c6971759d04518103c5fa6);
+            
+        
+
+        circle_marker_db8a331205a3c7722685e6de9c61b7fe.bindPopup(popup_d30a85fec19da1a5dbe3e5e0eb010571)
+        ;
+
+        
+    
+    
+            circle_marker_db8a331205a3c7722685e6de9c61b7fe.bindTooltip(
+                `<div>
+                     ORMOND QUAY UPPER
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_982b472fc22f071eebf9880217bbf200 = L.circleMarker(
+                [53.3535, -6.26531],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_f45a7dbb07aa1e86ac15d669a94ba2c2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_daa0f212b81f8bbb41977dbc7469341c = $(`<div id="html_daa0f212b81f8bbb41977dbc7469341c" style="width: 100.0%; height: 100.0%;">PARNELL SQUARE NORTH: 3.4 bikes</div>`)[0];
+                popup_f45a7dbb07aa1e86ac15d669a94ba2c2.setContent(html_daa0f212b81f8bbb41977dbc7469341c);
+            
+        
+
+        circle_marker_982b472fc22f071eebf9880217bbf200.bindPopup(popup_f45a7dbb07aa1e86ac15d669a94ba2c2)
+        ;
+
+        
+    
+    
+            circle_marker_982b472fc22f071eebf9880217bbf200.bindTooltip(
+                `<div>
+                     PARNELL SQUARE NORTH
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7c7076d5fb6633c4625bb904f6e2f35c = L.circleMarker(
+                [53.3509, -6.26512],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_72a3d2b7b0390e7e0e9484504e4d91d1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_94b19ecd5e35829a0d3366394b045926 = $(`<div id="html_94b19ecd5e35829a0d3366394b045926" style="width: 100.0%; height: 100.0%;">PARNELL STREET: 9.4 bikes</div>`)[0];
+                popup_72a3d2b7b0390e7e0e9484504e4d91d1.setContent(html_94b19ecd5e35829a0d3366394b045926);
+            
+        
+
+        circle_marker_7c7076d5fb6633c4625bb904f6e2f35c.bindPopup(popup_72a3d2b7b0390e7e0e9484504e4d91d1)
+        ;
+
+        
+    
+    
+            circle_marker_7c7076d5fb6633c4625bb904f6e2f35c.bindTooltip(
+                `<div>
+                     PARNELL STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_691aa108866cdce4861c72fe7eb59f01 = L.circleMarker(
+                [53.3443, -6.25043],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_9f7767e47eb2d615dd713aa7219236eb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_16be217265ef69b50d77522f02a0623a = $(`<div id="html_16be217265ef69b50d77522f02a0623a" style="width: 100.0%; height: 100.0%;">PEARSE STREET: 15.4 bikes</div>`)[0];
+                popup_9f7767e47eb2d615dd713aa7219236eb.setContent(html_16be217265ef69b50d77522f02a0623a);
+            
+        
+
+        circle_marker_691aa108866cdce4861c72fe7eb59f01.bindPopup(popup_9f7767e47eb2d615dd713aa7219236eb)
+        ;
+
+        
+    
+    
+            circle_marker_691aa108866cdce4861c72fe7eb59f01.bindTooltip(
+                `<div>
+                     PEARSE STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bf362774ec6b1348031277529000f3a1 = L.circleMarker(
+                [53.349, -6.26031],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_3c39a8ac328751753ebda4340e3a50bc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_05615a2ae14a37ab538a03c1fe3252b2 = $(`<div id="html_05615a2ae14a37ab538a03c1fe3252b2" style="width: 100.0%; height: 100.0%;">PRINCES STREET / O'CONNELL STREET: 16.3 bikes</div>`)[0];
+                popup_3c39a8ac328751753ebda4340e3a50bc.setContent(html_05615a2ae14a37ab538a03c1fe3252b2);
+            
+        
+
+        circle_marker_bf362774ec6b1348031277529000f3a1.bindPopup(popup_3c39a8ac328751753ebda4340e3a50bc)
+        ;
+
+        
+    
+    
+            circle_marker_bf362774ec6b1348031277529000f3a1.bindTooltip(
+                `<div>
+                     PRINCES STREET / O'CONNELL STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5f9ebec4c2faa0037f970ba699939a35 = L.circleMarker(
+                [53.3304, -6.26516],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_0b316493344f6b4fea09f1eca738795a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2ef3658da9650abff54b513c47fa8ab7 = $(`<div id="html_2ef3658da9650abff54b513c47fa8ab7" style="width: 100.0%; height: 100.0%;">PORTOBELLO HARBOUR: 16.4 bikes</div>`)[0];
+                popup_0b316493344f6b4fea09f1eca738795a.setContent(html_2ef3658da9650abff54b513c47fa8ab7);
+            
+        
+
+        circle_marker_5f9ebec4c2faa0037f970ba699939a35.bindPopup(popup_0b316493344f6b4fea09f1eca738795a)
+        ;
+
+        
+    
+    
+            circle_marker_5f9ebec4c2faa0037f970ba699939a35.bindTooltip(
+                `<div>
+                     PORTOBELLO HARBOUR
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_10863741be3ef241c37a11bd3b42f18c = L.circleMarker(
+                [53.3477, -6.27821],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_b14f1e3febba7b58defbf072625ee63f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a39e32c4f2ae36477fe7f5bbdd3afc7 = $(`<div id="html_7a39e32c4f2ae36477fe7f5bbdd3afc7" style="width: 100.0%; height: 100.0%;">SMITHFIELD: 22.1 bikes</div>`)[0];
+                popup_b14f1e3febba7b58defbf072625ee63f.setContent(html_7a39e32c4f2ae36477fe7f5bbdd3afc7);
+            
+        
+
+        circle_marker_10863741be3ef241c37a11bd3b42f18c.bindPopup(popup_b14f1e3febba7b58defbf072625ee63f)
+        ;
+
+        
+    
+    
+            circle_marker_10863741be3ef241c37a11bd3b42f18c.bindTooltip(
+                `<div>
+                     SMITHFIELD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a182d04a66dbe98df3a120432bb35858 = L.circleMarker(
+                [53.3378, -6.25603],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_7bc1dba3f0665b6f9213ab467bb868ca = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_55cb0240f8e218b852611f49848ac2df = $(`<div id="html_55cb0240f8e218b852611f49848ac2df" style="width: 100.0%; height: 100.0%;">ST. STEPHEN'S GREEN EAST: 9.3 bikes</div>`)[0];
+                popup_7bc1dba3f0665b6f9213ab467bb868ca.setContent(html_55cb0240f8e218b852611f49848ac2df);
+            
+        
+
+        circle_marker_a182d04a66dbe98df3a120432bb35858.bindPopup(popup_7bc1dba3f0665b6f9213ab467bb868ca)
+        ;
+
+        
+    
+    
+            circle_marker_a182d04a66dbe98df3a120432bb35858.bindTooltip(
+                `<div>
+                     ST. STEPHEN'S GREEN EAST
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_22a2c9ef9dd07af9ffacbf3287707a00 = L.circleMarker(
+                [53.3375, -6.26199],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_93feb6542690272ed05a31905827209d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a25feb708445e456bdc2af429970ed0a = $(`<div id="html_a25feb708445e456bdc2af429970ed0a" style="width: 100.0%; height: 100.0%;">ST. STEPHEN'S GREEN SOUTH: 1.9 bikes</div>`)[0];
+                popup_93feb6542690272ed05a31905827209d.setContent(html_a25feb708445e456bdc2af429970ed0a);
+            
+        
+
+        circle_marker_22a2c9ef9dd07af9ffacbf3287707a00.bindPopup(popup_93feb6542690272ed05a31905827209d)
+        ;
+
+        
+    
+    
+            circle_marker_22a2c9ef9dd07af9ffacbf3287707a00.bindTooltip(
+                `<div>
+                     ST. STEPHEN'S GREEN SOUTH
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a0b9c310dca804a9672286e8177efd47 = L.circleMarker(
+                [53.351, -6.25294],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_aec8e6c89ba4c9dfd5cff5b5f1011246 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b6d8e9c4accea64f0cf475ae6a443c43 = $(`<div id="html_b6d8e9c4accea64f0cf475ae6a443c43" style="width: 100.0%; height: 100.0%;">TALBOT STREET: 26.4 bikes</div>`)[0];
+                popup_aec8e6c89ba4c9dfd5cff5b5f1011246.setContent(html_b6d8e9c4accea64f0cf475ae6a443c43);
+            
+        
+
+        circle_marker_a0b9c310dca804a9672286e8177efd47.bindPopup(popup_aec8e6c89ba4c9dfd5cff5b5f1011246)
+        ;
+
+        
+    
+    
+            circle_marker_a0b9c310dca804a9672286e8177efd47.bindTooltip(
+                `<div>
+                     TALBOT STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_48a8d2334b381d98624159edf348d241 = L.circleMarker(
+                [53.3324, -6.25272],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_9001ac11e976b0c66a370bfeb649f5da = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6ffaeec76b3f932c536f52594eb8b462 = $(`<div id="html_6ffaeec76b3f932c536f52594eb8b462" style="width: 100.0%; height: 100.0%;">WILTON TERRACE: 5.6 bikes</div>`)[0];
+                popup_9001ac11e976b0c66a370bfeb649f5da.setContent(html_6ffaeec76b3f932c536f52594eb8b462);
+            
+        
+
+        circle_marker_48a8d2334b381d98624159edf348d241.bindPopup(popup_9001ac11e976b0c66a370bfeb649f5da)
+        ;
+
+        
+    
+    
+            circle_marker_48a8d2334b381d98624159edf348d241.bindTooltip(
+                `<div>
+                     WILTON TERRACE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5f7500d03c2c8c233010bcf4b48060c8 = L.circleMarker(
+                [53.3483, -6.26665],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_0652018fed90e1e61ba877156c7ddfbf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b6efe21ab56018551b4cc903dc439171 = $(`<div id="html_b6efe21ab56018551b4cc903dc439171" style="width: 100.0%; height: 100.0%;">JERVIS STREET: 11.7 bikes</div>`)[0];
+                popup_0652018fed90e1e61ba877156c7ddfbf.setContent(html_b6efe21ab56018551b4cc903dc439171);
+            
+        
+
+        circle_marker_5f7500d03c2c8c233010bcf4b48060c8.bindPopup(popup_0652018fed90e1e61ba877156c7ddfbf)
+        ;
+
+        
+    
+    
+            circle_marker_5f7500d03c2c8c233010bcf4b48060c8.bindTooltip(
+                `<div>
+                     JERVIS STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a6e1932a4f1b815aca79e6939d06c13e = L.circleMarker(
+                [53.3328, -6.25794],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_9788dfef231405ed8e4e0a5f840618a6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fadd44436f51192ace25a18b68fa64e9 = $(`<div id="html_fadd44436f51192ace25a18b68fa64e9" style="width: 100.0%; height: 100.0%;">HARCOURT TERRACE: 6.6 bikes</div>`)[0];
+                popup_9788dfef231405ed8e4e0a5f840618a6.setContent(html_fadd44436f51192ace25a18b68fa64e9);
+            
+        
+
+        circle_marker_a6e1932a4f1b815aca79e6939d06c13e.bindPopup(popup_9788dfef231405ed8e4e0a5f840618a6)
+        ;
+
+        
+    
+    
+            circle_marker_a6e1932a4f1b815aca79e6939d06c13e.bindTooltip(
+                `<div>
+                     HARCOURT TERRACE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9a74803b6a897aae5f761b4c690b1d22 = L.circleMarker(
+                [53.3496, -6.2782],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_3e7ccc4e4c029e3a2f13bd32bdb23dd7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7f0f1f74d97212c90883093dc5d2ec62 = $(`<div id="html_7f0f1f74d97212c90883093dc5d2ec62" style="width: 100.0%; height: 100.0%;">SMITHFIELD NORTH: 22.7 bikes</div>`)[0];
+                popup_3e7ccc4e4c029e3a2f13bd32bdb23dd7.setContent(html_7f0f1f74d97212c90883093dc5d2ec62);
+            
+        
+
+        circle_marker_9a74803b6a897aae5f761b4c690b1d22.bindPopup(popup_3e7ccc4e4c029e3a2f13bd32bdb23dd7)
+        ;
+
+        
+    
+    
+            circle_marker_9a74803b6a897aae5f761b4c690b1d22.bindTooltip(
+                `<div>
+                     SMITHFIELD NORTH
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6102a90eb83f0693ab572bf307dbb187 = L.circleMarker(
+                [53.3301, -6.26804],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_af724cdc0d1b722b9480ee04cf97a0e5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1fa7c35fb7659765ee8f52d58a49c56b = $(`<div id="html_1fa7c35fb7659765ee8f52d58a49c56b" style="width: 100.0%; height: 100.0%;">PORTOBELLO ROAD: 15.0 bikes</div>`)[0];
+                popup_af724cdc0d1b722b9480ee04cf97a0e5.setContent(html_1fa7c35fb7659765ee8f52d58a49c56b);
+            
+        
+
+        circle_marker_6102a90eb83f0693ab572bf307dbb187.bindPopup(popup_af724cdc0d1b722b9480ee04cf97a0e5)
+        ;
+
+        
+    
+    
+            circle_marker_6102a90eb83f0693ab572bf307dbb187.bindTooltip(
+                `<div>
+                     PORTOBELLO ROAD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_25b5520337c5aa86a7ee4d97558c488e = L.circleMarker(
+                [53.3584, -6.26064],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_01c73f36e0b8da5c19ef5d1be6e2ec20 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e458fb42d27bb6f56ce389617987be84 = $(`<div id="html_e458fb42d27bb6f56ce389617987be84" style="width: 100.0%; height: 100.0%;">UPPER SHERRARD STREET: 10.0 bikes</div>`)[0];
+                popup_01c73f36e0b8da5c19ef5d1be6e2ec20.setContent(html_e458fb42d27bb6f56ce389617987be84);
+            
+        
+
+        circle_marker_25b5520337c5aa86a7ee4d97558c488e.bindPopup(popup_01c73f36e0b8da5c19ef5d1be6e2ec20)
+        ;
+
+        
+    
+    
+            circle_marker_25b5520337c5aa86a7ee4d97558c488e.bindTooltip(
+                `<div>
+                     UPPER SHERRARD STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4ffa6765eba5dfe199a46ff81dcc3c30 = L.circleMarker(
+                [53.3515, -6.25527],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_a584d1818993456c961a881491caae82 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f68a86a7fd3f6a639d92f906bac1b6ef = $(`<div id="html_f68a86a7fd3f6a639d92f906bac1b6ef" style="width: 100.0%; height: 100.0%;">DEVERELL PLACE: 19.6 bikes</div>`)[0];
+                popup_a584d1818993456c961a881491caae82.setContent(html_f68a86a7fd3f6a639d92f906bac1b6ef);
+            
+        
+
+        circle_marker_4ffa6765eba5dfe199a46ff81dcc3c30.bindPopup(popup_a584d1818993456c961a881491caae82)
+        ;
+
+        
+    
+    
+            circle_marker_4ffa6765eba5dfe199a46ff81dcc3c30.bindTooltip(
+                `<div>
+                     DEVERELL PLACE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a1822e7d0c8920a40ee549dc962330f4 = L.circleMarker(
+                [53.3357, -6.24551],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_d3502cf4c969e2d8ee04b7ac0a94f194 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8069bf38dc29a1668fa2318bbf3b7007 = $(`<div id="html_8069bf38dc29a1668fa2318bbf3b7007" style="width: 100.0%; height: 100.0%;">HERBERT STREET: 5.0 bikes</div>`)[0];
+                popup_d3502cf4c969e2d8ee04b7ac0a94f194.setContent(html_8069bf38dc29a1668fa2318bbf3b7007);
+            
+        
+
+        circle_marker_a1822e7d0c8920a40ee549dc962330f4.bindPopup(popup_d3502cf4c969e2d8ee04b7ac0a94f194)
+        ;
+
+        
+    
+    
+            circle_marker_a1822e7d0c8920a40ee549dc962330f4.bindTooltip(
+                `<div>
+                     HERBERT STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3ec1a0c5cda79c6badfc8bfdcd1ed377 = L.circleMarker(
+                [53.3478, -6.24424],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_13bd88101317f63d917ef54438dc342f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_652f218898f4f05b928b9b7e44f47576 = $(`<div id="html_652f218898f4f05b928b9b7e44f47576" style="width: 100.0%; height: 100.0%;">EXCISE WALK: 12.8 bikes</div>`)[0];
+                popup_13bd88101317f63d917ef54438dc342f.setContent(html_652f218898f4f05b928b9b7e44f47576);
+            
+        
+
+        circle_marker_3ec1a0c5cda79c6badfc8bfdcd1ed377.bindPopup(popup_13bd88101317f63d917ef54438dc342f)
+        ;
+
+        
+    
+    
+            circle_marker_3ec1a0c5cda79c6badfc8bfdcd1ed377.bindTooltip(
+                `<div>
+                     EXCISE WALK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9948bdc9cbba24d40dfd84691886cdb9 = L.circleMarker(
+                [53.3479, -6.24093],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_e34cb548a7b915aa0caba0921932f5b2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5f5d19d109bdfbe1f1879ef5aa60651a = $(`<div id="html_5f5d19d109bdfbe1f1879ef5aa60651a" style="width: 100.0%; height: 100.0%;">GUILD STREET: 16.5 bikes</div>`)[0];
+                popup_e34cb548a7b915aa0caba0921932f5b2.setContent(html_5f5d19d109bdfbe1f1879ef5aa60651a);
+            
+        
+
+        circle_marker_9948bdc9cbba24d40dfd84691886cdb9.bindPopup(popup_e34cb548a7b915aa0caba0921932f5b2)
+        ;
+
+        
+    
+    
+            circle_marker_9948bdc9cbba24d40dfd84691886cdb9.bindTooltip(
+                `<div>
+                     GUILD STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_53a3b3fa353fe80007899257d1ebc458 = L.circleMarker(
+                [53.3502, -6.2797],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_2333bd93a52c4b3cafd6c23ab6e43330 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b40d71d1ae866249d844cf6b9bb5f265 = $(`<div id="html_b40d71d1ae866249d844cf6b9bb5f265" style="width: 100.0%; height: 100.0%;">GEORGES LANE: 22.6 bikes</div>`)[0];
+                popup_2333bd93a52c4b3cafd6c23ab6e43330.setContent(html_b40d71d1ae866249d844cf6b9bb5f265);
+            
+        
+
+        circle_marker_53a3b3fa353fe80007899257d1ebc458.bindPopup(popup_2333bd93a52c4b3cafd6c23ab6e43330)
+        ;
+
+        
+    
+    
+            circle_marker_53a3b3fa353fe80007899257d1ebc458.bindTooltip(
+                `<div>
+                     GEORGES LANE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f131d2a84a7cee4820cc79ac91a223d2 = L.circleMarker(
+                [53.3393, -6.2647],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_53ea7b96c8222fd772b9eb693f4f8e1f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_521b01618317dd9b7c61e59f7b9c17eb = $(`<div id="html_521b01618317dd9b7c61e59f7b9c17eb" style="width: 100.0%; height: 100.0%;">YORK STREET WEST: 8.9 bikes</div>`)[0];
+                popup_53ea7b96c8222fd772b9eb693f4f8e1f.setContent(html_521b01618317dd9b7c61e59f7b9c17eb);
+            
+        
+
+        circle_marker_f131d2a84a7cee4820cc79ac91a223d2.bindPopup(popup_53ea7b96c8222fd772b9eb693f4f8e1f)
+        ;
+
+        
+    
+    
+            circle_marker_f131d2a84a7cee4820cc79ac91a223d2.bindTooltip(
+                `<div>
+                     YORK STREET WEST
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8bbef96dd181035367ab18c05cd316b1 = L.circleMarker(
+                [53.3388, -6.262],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_b4eee4ab0e8aa6cb6b5c85f15db21769 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_94924da7e6f78032bfb8434bbb3cd6a8 = $(`<div id="html_94924da7e6f78032bfb8434bbb3cd6a8" style="width: 100.0%; height: 100.0%;">YORK STREET EAST: 7.8 bikes</div>`)[0];
+                popup_b4eee4ab0e8aa6cb6b5c85f15db21769.setContent(html_94924da7e6f78032bfb8434bbb3cd6a8);
+            
+        
+
+        circle_marker_8bbef96dd181035367ab18c05cd316b1.bindPopup(popup_b4eee4ab0e8aa6cb6b5c85f15db21769)
+        ;
+
+        
+    
+    
+            circle_marker_8bbef96dd181035367ab18c05cd316b1.bindTooltip(
+                `<div>
+                     YORK STREET EAST
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_75f6d6946ceefb1469f5254cd9154f7f = L.circleMarker(
+                [53.3371, -6.26059],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_ccc1035cec4a2400f91040e4377ef2b5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1b051d94254cb1cd986f7196e1c4dc80 = $(`<div id="html_1b051d94254cb1cd986f7196e1c4dc80" style="width: 100.0%; height: 100.0%;">NEWMAN HOUSE: 5.6 bikes</div>`)[0];
+                popup_ccc1035cec4a2400f91040e4377ef2b5.setContent(html_1b051d94254cb1cd986f7196e1c4dc80);
+            
+        
+
+        circle_marker_75f6d6946ceefb1469f5254cd9154f7f.bindPopup(popup_ccc1035cec4a2400f91040e4377ef2b5)
+        ;
+
+        
+    
+    
+            circle_marker_75f6d6946ceefb1469f5254cd9154f7f.bindTooltip(
+                `<div>
+                     NEWMAN HOUSE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_44d681c2e2bffc03f6b99cfcc42db8e0 = L.circleMarker(
+                [53.336, -6.26298],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_98a83ef9f22e1b8aaf2bd1e6a2c193ce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a6920114453f61e612316360f50dc491 = $(`<div id="html_a6920114453f61e612316360f50dc491" style="width: 100.0%; height: 100.0%;">CLONMEL STREET: 10.5 bikes</div>`)[0];
+                popup_98a83ef9f22e1b8aaf2bd1e6a2c193ce.setContent(html_a6920114453f61e612316360f50dc491);
+            
+        
+
+        circle_marker_44d681c2e2bffc03f6b99cfcc42db8e0.bindPopup(popup_98a83ef9f22e1b8aaf2bd1e6a2c193ce)
+        ;
+
+        
+    
+    
+            circle_marker_44d681c2e2bffc03f6b99cfcc42db8e0.bindTooltip(
+                `<div>
+                     CLONMEL STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e3381303439a93c0f78c7277095a6567 = L.circleMarker(
+                [53.334, -6.26071],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_372293a3351edf126dabcd6560223b7c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f9b9df084b4134df4e08af6853127f02 = $(`<div id="html_f9b9df084b4134df4e08af6853127f02" style="width: 100.0%; height: 100.0%;">HATCH STREET: 6.1 bikes</div>`)[0];
+                popup_372293a3351edf126dabcd6560223b7c.setContent(html_f9b9df084b4134df4e08af6853127f02);
+            
+        
+
+        circle_marker_e3381303439a93c0f78c7277095a6567.bindPopup(popup_372293a3351edf126dabcd6560223b7c)
+        ;
+
+        
+    
+    
+            circle_marker_e3381303439a93c0f78c7277095a6567.bindTooltip(
+                `<div>
+                     HATCH STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1d3c74b3921f2b34e1ca6d8dd057837a = L.circleMarker(
+                [53.338, -6.24153],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_d2d9bf9bbb37f0ebb5e914732ff55b46 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_32f2410978f459c5d252598db78ba81d = $(`<div id="html_32f2410978f459c5d252598db78ba81d" style="width: 100.0%; height: 100.0%;">MOUNT STREET LOWER: 14.6 bikes</div>`)[0];
+                popup_d2d9bf9bbb37f0ebb5e914732ff55b46.setContent(html_32f2410978f459c5d252598db78ba81d);
+            
+        
+
+        circle_marker_1d3c74b3921f2b34e1ca6d8dd057837a.bindPopup(popup_d2d9bf9bbb37f0ebb5e914732ff55b46)
+        ;
+
+        
+    
+    
+            circle_marker_1d3c74b3921f2b34e1ca6d8dd057837a.bindTooltip(
+                `<div>
+                     MOUNT STREET LOWER
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b2482f652c462e597db016a2f8c12f41 = L.circleMarker(
+                [53.3396, -6.24378],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_551c5786acd36183f807d0a74d90e9c0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b1afb5ad8de1251d295b0503cd7aa43f = $(`<div id="html_b1afb5ad8de1251d295b0503cd7aa43f" style="width: 100.0%; height: 100.0%;">GRATTAN STREET: 8.5 bikes</div>`)[0];
+                popup_551c5786acd36183f807d0a74d90e9c0.setContent(html_b1afb5ad8de1251d295b0503cd7aa43f);
+            
+        
+
+        circle_marker_b2482f652c462e597db016a2f8c12f41.bindPopup(popup_551c5786acd36183f807d0a74d90e9c0)
+        ;
+
+        
+    
+    
+            circle_marker_b2482f652c462e597db016a2f8c12f41.bindTooltip(
+                `<div>
+                     GRATTAN STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_388e05b934722548e70187f8115f5e15 = L.circleMarker(
+                [53.3392, -6.24064],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_1b7914c910846988733482d4c06070c7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a7084a05b4ef18e993e625ad1ee636c1 = $(`<div id="html_a7084a05b4ef18e993e625ad1ee636c1" style="width: 100.0%; height: 100.0%;">SIR PATRICK DUN'S: 19.7 bikes</div>`)[0];
+                popup_1b7914c910846988733482d4c06070c7.setContent(html_a7084a05b4ef18e993e625ad1ee636c1);
+            
+        
+
+        circle_marker_388e05b934722548e70187f8115f5e15.bindPopup(popup_1b7914c910846988733482d4c06070c7)
+        ;
+
+        
+    
+    
+            circle_marker_388e05b934722548e70187f8115f5e15.bindTooltip(
+                `<div>
+                     SIR PATRICK DUN'S
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c7a0cbf5087b8abc62f8e5338c7e135d = L.circleMarker(
+                [53.3556, -6.2614],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_f0a6f9d08b3d41baf3319c3065903fb2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cb3ebfb8de25cc9f9f951adda808a039 = $(`<div id="html_cb3ebfb8de25cc9f9f951adda808a039" style="width: 100.0%; height: 100.0%;">DENMARK STREET GREAT: 4.3 bikes</div>`)[0];
+                popup_f0a6f9d08b3d41baf3319c3065903fb2.setContent(html_cb3ebfb8de25cc9f9f951adda808a039);
+            
+        
+
+        circle_marker_c7a0cbf5087b8abc62f8e5338c7e135d.bindPopup(popup_f0a6f9d08b3d41baf3319c3065903fb2)
+        ;
+
+        
+    
+    
+            circle_marker_c7a0cbf5087b8abc62f8e5338c7e135d.bindTooltip(
+                `<div>
+                     DENMARK STREET GREAT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c9f9ff47f13673d3dc5aa9e9c4c5bb9e = L.circleMarker(
+                [53.3596, -6.26035],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_82a555eb73328dd2b72f023341eecc75 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7cebda3d82770de0eeaa9e04f1b154a7 = $(`<div id="html_7cebda3d82770de0eeaa9e04f1b154a7" style="width: 100.0%; height: 100.0%;">NORTH CIRCULAR ROAD: 13.1 bikes</div>`)[0];
+                popup_82a555eb73328dd2b72f023341eecc75.setContent(html_7cebda3d82770de0eeaa9e04f1b154a7);
+            
+        
+
+        circle_marker_c9f9ff47f13673d3dc5aa9e9c4c5bb9e.bindPopup(popup_82a555eb73328dd2b72f023341eecc75)
+        ;
+
+        
+    
+    
+            circle_marker_c9f9ff47f13673d3dc5aa9e9c4c5bb9e.bindTooltip(
+                `<div>
+                     NORTH CIRCULAR ROAD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1084ee5ed7e1b10e8b07a1c299fefeaa = L.circleMarker(
+                [53.357, -6.26323],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_25faa653153dd0994448fea127015bec = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_85cd908b19653d7b36304c31def8864c = $(`<div id="html_85cd908b19653d7b36304c31def8864c" style="width: 100.0%; height: 100.0%;">HARDWICKE PLACE: 5.3 bikes</div>`)[0];
+                popup_25faa653153dd0994448fea127015bec.setContent(html_85cd908b19653d7b36304c31def8864c);
+            
+        
+
+        circle_marker_1084ee5ed7e1b10e8b07a1c299fefeaa.bindPopup(popup_25faa653153dd0994448fea127015bec)
+        ;
+
+        
+    
+    
+            circle_marker_1084ee5ed7e1b10e8b07a1c299fefeaa.bindTooltip(
+                `<div>
+                     HARDWICKE PLACE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1a0b0d4ae852ecf780183f45abd83fe1 = L.circleMarker(
+                [53.346, -6.24358],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_2e02e111b254d7da138cd8b8f8ca1bc1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c5453b5729e923b68e16796cec39d271 = $(`<div id="html_c5453b5729e923b68e16796cec39d271" style="width: 100.0%; height: 100.0%;">LIME STREET: 14.8 bikes</div>`)[0];
+                popup_2e02e111b254d7da138cd8b8f8ca1bc1.setContent(html_c5453b5729e923b68e16796cec39d271);
+            
+        
+
+        circle_marker_1a0b0d4ae852ecf780183f45abd83fe1.bindPopup(popup_2e02e111b254d7da138cd8b8f8ca1bc1)
+        ;
+
+        
+    
+    
+            circle_marker_1a0b0d4ae852ecf780183f45abd83fe1.bindTooltip(
+                `<div>
+                     LIME STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f7317fe6409adb60388533624e8c375a = L.circleMarker(
+                [53.3414, -6.24672],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_6faa80cd6d13d4b3d1c55d22b38fe378 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a3cabbdf1e629722a68408b73150c90 = $(`<div id="html_7a3cabbdf1e629722a68408b73150c90" style="width: 100.0%; height: 100.0%;">FENIAN STREET: 13.2 bikes</div>`)[0];
+                popup_6faa80cd6d13d4b3d1c55d22b38fe378.setContent(html_7a3cabbdf1e629722a68408b73150c90);
+            
+        
+
+        circle_marker_f7317fe6409adb60388533624e8c375a.bindPopup(popup_6faa80cd6d13d4b3d1c55d22b38fe378)
+        ;
+
+        
+    
+    
+            circle_marker_f7317fe6409adb60388533624e8c375a.bindTooltip(
+                `<div>
+                     FENIAN STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_58d65fbb86c7d11f939f5a7e332d80af = L.circleMarker(
+                [53.3452, -6.24716],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_91b4f556c8db7ed212a9b5e84db3ac98 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_86162aee89ad5c255e8d2a7c97919911 = $(`<div id="html_86162aee89ad5c255e8d2a7c97919911" style="width: 100.0%; height: 100.0%;">SANDWITH STREET: 20.3 bikes</div>`)[0];
+                popup_91b4f556c8db7ed212a9b5e84db3ac98.setContent(html_86162aee89ad5c255e8d2a7c97919911);
+            
+        
+
+        circle_marker_58d65fbb86c7d11f939f5a7e332d80af.bindPopup(popup_91b4f556c8db7ed212a9b5e84db3ac98)
+        ;
+
+        
+    
+    
+            circle_marker_58d65fbb86c7d11f939f5a7e332d80af.bindTooltip(
+                `<div>
+                     SANDWITH STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f08b536b0162084a095690c3b019beca = L.circleMarker(
+                [53.3474, -6.23852],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_4e70b95deddd0aeba3a1d62374d2fd18 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4f583f0ab58aa397596c276c3ec529ef = $(`<div id="html_4f583f0ab58aa397596c276c3ec529ef" style="width: 100.0%; height: 100.0%;">CONVENTION CENTRE: 7.3 bikes</div>`)[0];
+                popup_4e70b95deddd0aeba3a1d62374d2fd18.setContent(html_4f583f0ab58aa397596c276c3ec529ef);
+            
+        
+
+        circle_marker_f08b536b0162084a095690c3b019beca.bindPopup(popup_4e70b95deddd0aeba3a1d62374d2fd18)
+        ;
+
+        
+    
+    
+            circle_marker_f08b536b0162084a095690c3b019beca.bindTooltip(
+                `<div>
+                     CONVENTION CENTRE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0c478331c6bf83951b2af7834993b3b5 = L.circleMarker(
+                [53.3471, -6.23475],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_205a8e499632628701036483b3a31df6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_935e107aeb223b1ac71ad7e8aa86c548 = $(`<div id="html_935e107aeb223b1ac71ad7e8aa86c548" style="width: 100.0%; height: 100.0%;">NEW CENTRAL BANK: 12.1 bikes</div>`)[0];
+                popup_205a8e499632628701036483b3a31df6.setContent(html_935e107aeb223b1ac71ad7e8aa86c548);
+            
+        
+
+        circle_marker_0c478331c6bf83951b2af7834993b3b5.bindPopup(popup_205a8e499632628701036483b3a31df6)
+        ;
+
+        
+    
+    
+            circle_marker_0c478331c6bf83951b2af7834993b3b5.bindTooltip(
+                `<div>
+                     NEW CENTRAL BANK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_67badbc49fc8509b8291dae0d6e3367f = L.circleMarker(
+                [53.3469, -6.23085],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_64f906c2a03d5af3a84bc7a9060db0fa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0ad081c491c7ba307d44c0e94a456ea0 = $(`<div id="html_0ad081c491c7ba307d44c0e94a456ea0" style="width: 100.0%; height: 100.0%;">THE POINT: 15.4 bikes</div>`)[0];
+                popup_64f906c2a03d5af3a84bc7a9060db0fa.setContent(html_0ad081c491c7ba307d44c0e94a456ea0);
+            
+        
+
+        circle_marker_67badbc49fc8509b8291dae0d6e3367f.bindPopup(popup_64f906c2a03d5af3a84bc7a9060db0fa)
+        ;
+
+        
+    
+    
+            circle_marker_67badbc49fc8509b8291dae0d6e3367f.bindTooltip(
+                `<div>
+                     THE POINT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0b38b0cf754da5c5fb0715a392c4d3ee = L.circleMarker(
+                [53.3441, -6.23715],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_dc992033c339ca7546954c988cbee19e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_be798685df4105e709e61d73973aa9e5 = $(`<div id="html_be798685df4105e709e61d73973aa9e5" style="width: 100.0%; height: 100.0%;">HANOVER QUAY: 15.3 bikes</div>`)[0];
+                popup_dc992033c339ca7546954c988cbee19e.setContent(html_be798685df4105e709e61d73973aa9e5);
+            
+        
+
+        circle_marker_0b38b0cf754da5c5fb0715a392c4d3ee.bindPopup(popup_dc992033c339ca7546954c988cbee19e)
+        ;
+
+        
+    
+    
+            circle_marker_0b38b0cf754da5c5fb0715a392c4d3ee.bindTooltip(
+                `<div>
+                     HANOVER QUAY
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_39e3ebc876c382e383807dd3bb80b281 = L.circleMarker(
+                [53.3426, -6.2387],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_5b61e2a9ab0cd8403e390c1c81887961 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0763627f86a508214405151e62d4df6c = $(`<div id="html_0763627f86a508214405151e62d4df6c" style="width: 100.0%; height: 100.0%;">GRAND CANAL DOCK: 17.9 bikes</div>`)[0];
+                popup_5b61e2a9ab0cd8403e390c1c81887961.setContent(html_0763627f86a508214405151e62d4df6c);
+            
+        
+
+        circle_marker_39e3ebc876c382e383807dd3bb80b281.bindPopup(popup_5b61e2a9ab0cd8403e390c1c81887961)
+        ;
+
+        
+    
+    
+            circle_marker_39e3ebc876c382e383807dd3bb80b281.bindTooltip(
+                `<div>
+                     GRAND CANAL DOCK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7c76d868a354d9ad8a64c2e3abb6717d = L.circleMarker(
+                [53.3378, -6.2677],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_fedb69a2a114dc92e2e833f75db42431 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_87e37f02aa53b5dd58891b168bb57af9 = $(`<div id="html_87e37f02aa53b5dd58891b168bb57af9" style="width: 100.0%; height: 100.0%;">KEVIN STREET: 10.3 bikes</div>`)[0];
+                popup_fedb69a2a114dc92e2e833f75db42431.setContent(html_87e37f02aa53b5dd58891b168bb57af9);
+            
+        
+
+        circle_marker_7c76d868a354d9ad8a64c2e3abb6717d.bindPopup(popup_fedb69a2a114dc92e2e833f75db42431)
+        ;
+
+        
+    
+    
+            circle_marker_7c76d868a354d9ad8a64c2e3abb6717d.bindTooltip(
+                `<div>
+                     KEVIN STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bed61d58541efe0ba314e1758e0ba911 = L.circleMarker(
+                [53.3431, -6.27717],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_a579943f8231ab9ba80ea51e7eecd5cd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bd665b6e5ca7f844c49e9c044f5751ad = $(`<div id="html_bd665b6e5ca7f844c49e9c044f5751ad" style="width: 100.0%; height: 100.0%;">JOHN STREET WEST: 5.4 bikes</div>`)[0];
+                popup_a579943f8231ab9ba80ea51e7eecd5cd.setContent(html_bd665b6e5ca7f844c49e9c044f5751ad);
+            
+        
+
+        circle_marker_bed61d58541efe0ba314e1758e0ba911.bindPopup(popup_a579943f8231ab9ba80ea51e7eecd5cd)
+        ;
+
+        
+    
+    
+            circle_marker_bed61d58541efe0ba314e1758e0ba911.bindTooltip(
+                `<div>
+                     JOHN STREET WEST
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c1e15ec0961adee6c67a7fe82ca25625 = L.circleMarker(
+                [53.3421, -6.27523],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_5b65b6ce066cf04a2a4d848be0c58a76 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_775e4ee5e49e4dd837bc57215ee13c2d = $(`<div id="html_775e4ee5e49e4dd837bc57215ee13c2d" style="width: 100.0%; height: 100.0%;">FRANCIS STREET: 8.2 bikes</div>`)[0];
+                popup_5b65b6ce066cf04a2a4d848be0c58a76.setContent(html_775e4ee5e49e4dd837bc57215ee13c2d);
+            
+        
+
+        circle_marker_c1e15ec0961adee6c67a7fe82ca25625.bindPopup(popup_5b65b6ce066cf04a2a4d848be0c58a76)
+        ;
+
+        
+    
+    
+            circle_marker_c1e15ec0961adee6c67a7fe82ca25625.bindTooltip(
+                `<div>
+                     FRANCIS STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2db9cf4472651ce1a5c42f0801ff3108 = L.circleMarker(
+                [53.3439, -6.28053],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_8076447cacef9c6348b85b95069e9c19 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c03cbe107968006a1985f62f480507e9 = $(`<div id="html_c03cbe107968006a1985f62f480507e9" style="width: 100.0%; height: 100.0%;">OLIVER BOND STREET: 10.4 bikes</div>`)[0];
+                popup_8076447cacef9c6348b85b95069e9c19.setContent(html_c03cbe107968006a1985f62f480507e9);
+            
+        
+
+        circle_marker_2db9cf4472651ce1a5c42f0801ff3108.bindPopup(popup_8076447cacef9c6348b85b95069e9c19)
+        ;
+
+        
+    
+    
+            circle_marker_2db9cf4472651ce1a5c42f0801ff3108.bindTooltip(
+                `<div>
+                     OLIVER BOND STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e04b9fac2f372693033829ddcaf5e04a = L.circleMarker(
+                [53.3435, -6.28741],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_00e1ebfc0e4300a54aba20b55df0fe47 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_477f8465cf5099ece3ec86fe0c7e60b5 = $(`<div id="html_477f8465cf5099ece3ec86fe0c7e60b5" style="width: 100.0%; height: 100.0%;">JAMES STREET: 15.8 bikes</div>`)[0];
+                popup_00e1ebfc0e4300a54aba20b55df0fe47.setContent(html_477f8465cf5099ece3ec86fe0c7e60b5);
+            
+        
+
+        circle_marker_e04b9fac2f372693033829ddcaf5e04a.bindPopup(popup_00e1ebfc0e4300a54aba20b55df0fe47)
+        ;
+
+        
+    
+    
+            circle_marker_e04b9fac2f372693033829ddcaf5e04a.bindTooltip(
+                `<div>
+                     JAMES STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dead3beb1a5124739d349ed9bf7653e6 = L.circleMarker(
+                [53.3423, -6.28766],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_90884d5865953a63ebee6e38ec67b3e4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6086172f7c35be13367c3ec3c736b2b7 = $(`<div id="html_6086172f7c35be13367c3ec3c736b2b7" style="width: 100.0%; height: 100.0%;">MARKET STREET SOUTH: 10.1 bikes</div>`)[0];
+                popup_90884d5865953a63ebee6e38ec67b3e4.setContent(html_6086172f7c35be13367c3ec3c736b2b7);
+            
+        
+
+        circle_marker_dead3beb1a5124739d349ed9bf7653e6.bindPopup(popup_90884d5865953a63ebee6e38ec67b3e4)
+        ;
+
+        
+    
+    
+            circle_marker_dead3beb1a5124739d349ed9bf7653e6.bindTooltip(
+                `<div>
+                     MARKET STREET SOUTH
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6f72fa0a7909edb3abd3e28d5c777ec9 = L.circleMarker(
+                [53.3489, -6.26746],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_24d83efa8d7fbd8b0e9ea3dbf1fe33bf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bf3179e54974174e73cf195dea9c1ed3 = $(`<div id="html_bf3179e54974174e73cf195dea9c1ed3" style="width: 100.0%; height: 100.0%;">WOLFE TONE STREET: 15.7 bikes</div>`)[0];
+                popup_24d83efa8d7fbd8b0e9ea3dbf1fe33bf.setContent(html_bf3179e54974174e73cf195dea9c1ed3);
+            
+        
+
+        circle_marker_6f72fa0a7909edb3abd3e28d5c777ec9.bindPopup(popup_24d83efa8d7fbd8b0e9ea3dbf1fe33bf)
+        ;
+
+        
+    
+    
+            circle_marker_6f72fa0a7909edb3abd3e28d5c777ec9.bindTooltip(
+                `<div>
+                     WOLFE TONE STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c747cbc5a4aefa3a1be113bd5b7b77d4 = L.circleMarker(
+                [53.36, -6.26483],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_aa8197671486b0517a38dcfc4a7ece6c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3cd900565f8a5cd44121561341dbb93e = $(`<div id="html_3cd900565f8a5cd44121561341dbb93e" style="width: 100.0%; height: 100.0%;">MATER HOSPITAL: 11.8 bikes</div>`)[0];
+                popup_aa8197671486b0517a38dcfc4a7ece6c.setContent(html_3cd900565f8a5cd44121561341dbb93e);
+            
+        
+
+        circle_marker_c747cbc5a4aefa3a1be113bd5b7b77d4.bindPopup(popup_aa8197671486b0517a38dcfc4a7ece6c)
+        ;
+
+        
+    
+    
+            circle_marker_c747cbc5a4aefa3a1be113bd5b7b77d4.bindTooltip(
+                `<div>
+                     MATER HOSPITAL
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5ec06fa8849cc3cf26612c1e00658829 = L.circleMarker(
+                [53.3581, -6.2656],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_368508934cfc71d956c13bd3ff496d1a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e6e70573aefb05b2c9155ad099f23e6a = $(`<div id="html_e6e70573aefb05b2c9155ad099f23e6a" style="width: 100.0%; height: 100.0%;">ECCLES STREET EAST: 3.8 bikes</div>`)[0];
+                popup_368508934cfc71d956c13bd3ff496d1a.setContent(html_e6e70573aefb05b2c9155ad099f23e6a);
+            
+        
+
+        circle_marker_5ec06fa8849cc3cf26612c1e00658829.bindPopup(popup_368508934cfc71d956c13bd3ff496d1a)
+        ;
+
+        
+    
+    
+            circle_marker_5ec06fa8849cc3cf26612c1e00658829.bindTooltip(
+                `<div>
+                     ECCLES STREET EAST
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ac0bf87f5dd143aa82fc9eef46a0576c = L.circleMarker(
+                [53.3414, -6.29295],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_67efcc5362622019f2819300ed14376f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2bf5b2789202bcbc20879cb1828ce7bd = $(`<div id="html_2bf5b2789202bcbc20879cb1828ce7bd" style="width: 100.0%; height: 100.0%;">ST JAMES HOSPITAL (LUAS): 13.3 bikes</div>`)[0];
+                popup_67efcc5362622019f2819300ed14376f.setContent(html_2bf5b2789202bcbc20879cb1828ce7bd);
+            
+        
+
+        circle_marker_ac0bf87f5dd143aa82fc9eef46a0576c.bindPopup(popup_67efcc5362622019f2819300ed14376f)
+        ;
+
+        
+    
+    
+            circle_marker_ac0bf87f5dd143aa82fc9eef46a0576c.bindTooltip(
+                `<div>
+                     ST JAMES HOSPITAL (LUAS)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c40645207197b29821a59a1085ca5fba = L.circleMarker(
+                [53.3416, -6.29719],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_b76e80bc2f0aa55b072aaa878dacbe34 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4e4c4a83af00cfcccc644e97050fedf9 = $(`<div id="html_4e4c4a83af00cfcccc644e97050fedf9" style="width: 100.0%; height: 100.0%;">MOUNT BROWN: 7.5 bikes</div>`)[0];
+                popup_b76e80bc2f0aa55b072aaa878dacbe34.setContent(html_4e4c4a83af00cfcccc644e97050fedf9);
+            
+        
+
+        circle_marker_c40645207197b29821a59a1085ca5fba.bindPopup(popup_b76e80bc2f0aa55b072aaa878dacbe34)
+        ;
+
+        
+    
+    
+            circle_marker_c40645207197b29821a59a1085ca5fba.bindTooltip(
+                `<div>
+                     MOUNT BROWN
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1074147288355e9afddfb59507a51b4a = L.circleMarker(
+                [53.3407, -6.30819],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_78496bac8ec5ab11c49efe4817f4e0b9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e570ad3a8950873df82f7eca44b50b76 = $(`<div id="html_e570ad3a8950873df82f7eca44b50b76" style="width: 100.0%; height: 100.0%;">EMMET ROAD: 16.4 bikes</div>`)[0];
+                popup_78496bac8ec5ab11c49efe4817f4e0b9.setContent(html_e570ad3a8950873df82f7eca44b50b76);
+            
+        
+
+        circle_marker_1074147288355e9afddfb59507a51b4a.bindPopup(popup_78496bac8ec5ab11c49efe4817f4e0b9)
+        ;
+
+        
+    
+    
+            circle_marker_1074147288355e9afddfb59507a51b4a.bindTooltip(
+                `<div>
+                     EMMET ROAD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4e268fed99c16e5a938dc55a7e80cb9d = L.circleMarker(
+                [53.339, -6.30022],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_dda7b38b358abad41389a32b6a376b67 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f2c9abb67486fb6435ef132e38974b3d = $(`<div id="html_f2c9abb67486fb6435ef132e38974b3d" style="width: 100.0%; height: 100.0%;">BROOKFIELD ROAD: 8.4 bikes</div>`)[0];
+                popup_dda7b38b358abad41389a32b6a376b67.setContent(html_f2c9abb67486fb6435ef132e38974b3d);
+            
+        
+
+        circle_marker_4e268fed99c16e5a938dc55a7e80cb9d.bindPopup(popup_dda7b38b358abad41389a32b6a376b67)
+        ;
+
+        
+    
+    
+            circle_marker_4e268fed99c16e5a938dc55a7e80cb9d.bindTooltip(
+                `<div>
+                     BROOKFIELD ROAD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1e5fd73f6479bdf30b13bb0e89c2a8c0 = L.circleMarker(
+                [53.3388, -6.30395],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_c316331b1269d44df1e59a7b4ff6a35c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b8cb7afa741d9cc42e8b31ad04a285f8 = $(`<div id="html_b8cb7afa741d9cc42e8b31ad04a285f8" style="width: 100.0%; height: 100.0%;">ROTHE ABBEY: 13.2 bikes</div>`)[0];
+                popup_c316331b1269d44df1e59a7b4ff6a35c.setContent(html_b8cb7afa741d9cc42e8b31ad04a285f8);
+            
+        
+
+        circle_marker_1e5fd73f6479bdf30b13bb0e89c2a8c0.bindPopup(popup_c316331b1269d44df1e59a7b4ff6a35c)
+        ;
+
+        
+    
+    
+            circle_marker_1e5fd73f6479bdf30b13bb0e89c2a8c0.bindTooltip(
+                `<div>
+                     ROTHE ABBEY
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_01beb1b3b9c833c1684231ca1020cba8 = L.circleMarker(
+                [53.348, -6.2918],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_e822fc9b83fc12696c40f147f5d68937 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6f021fd8238d89fb33deebb7ad8a62ed = $(`<div id="html_6f021fd8238d89fb33deebb7ad8a62ed" style="width: 100.0%; height: 100.0%;">PARKGATE STREET: 25.1 bikes</div>`)[0];
+                popup_e822fc9b83fc12696c40f147f5d68937.setContent(html_6f021fd8238d89fb33deebb7ad8a62ed);
+            
+        
+
+        circle_marker_01beb1b3b9c833c1684231ca1020cba8.bindPopup(popup_e822fc9b83fc12696c40f147f5d68937)
+        ;
+
+        
+    
+    
+            circle_marker_01beb1b3b9c833c1684231ca1020cba8.bindTooltip(
+                `<div>
+                     PARKGATE STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fe7e7a0f4465e21d1a9e1395bdde875c = L.circleMarker(
+                [53.3475, -6.28525],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_8280bad9dac5f429ae54d0734edd98e6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d81537a1339f240f3efc2164cf7a24b5 = $(`<div id="html_d81537a1339f240f3efc2164cf7a24b5" style="width: 100.0%; height: 100.0%;">COLLINS BARRACKS MUSEUM: 10.2 bikes</div>`)[0];
+                popup_8280bad9dac5f429ae54d0734edd98e6.setContent(html_d81537a1339f240f3efc2164cf7a24b5);
+            
+        
+
+        circle_marker_fe7e7a0f4465e21d1a9e1395bdde875c.bindPopup(popup_8280bad9dac5f429ae54d0734edd98e6)
+        ;
+
+        
+    
+    
+            circle_marker_fe7e7a0f4465e21d1a9e1395bdde875c.bindTooltip(
+                `<div>
+                     COLLINS BARRACKS MUSEUM
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d9e6cbc7ffa88aaee48af8981fb97ec4 = L.circleMarker(
+                [53.3488, -6.28164],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_6ebf462d3974a0ad4af54cffcf23fd85 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aba370fde8aa3161fe6fec4f100390d4 = $(`<div id="html_aba370fde8aa3161fe6fec4f100390d4" style="width: 100.0%; height: 100.0%;">BLACKHALL PLACE: 15.2 bikes</div>`)[0];
+                popup_6ebf462d3974a0ad4af54cffcf23fd85.setContent(html_aba370fde8aa3161fe6fec4f100390d4);
+            
+        
+
+        circle_marker_d9e6cbc7ffa88aaee48af8981fb97ec4.bindPopup(popup_6ebf462d3974a0ad4af54cffcf23fd85)
+        ;
+
+        
+    
+    
+            circle_marker_d9e6cbc7ffa88aaee48af8981fb97ec4.bindTooltip(
+                `<div>
+                     BLACKHALL PLACE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a4f0fba27494c88ca93607f32f1dd066 = L.circleMarker(
+                [53.3352, -6.2509],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_f56c6f8b27c7e8c2ddd3984e8e8b1ed8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0b7f42c02e30e2b4f06cdbb962647ee6 = $(`<div id="html_0b7f42c02e30e2b4f06cdbb962647ee6" style="width: 100.0%; height: 100.0%;">FITZWILLIAM SQUARE EAST: 4.3 bikes</div>`)[0];
+                popup_f56c6f8b27c7e8c2ddd3984e8e8b1ed8.setContent(html_0b7f42c02e30e2b4f06cdbb962647ee6);
+            
+        
+
+        circle_marker_a4f0fba27494c88ca93607f32f1dd066.bindPopup(popup_f56c6f8b27c7e8c2ddd3984e8e8b1ed8)
+        ;
+
+        
+    
+    
+            circle_marker_a4f0fba27494c88ca93607f32f1dd066.bindTooltip(
+                `<div>
+                     FITZWILLIAM SQUARE EAST
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f8ff5bab2102c9ec7019b122e2950d3d = L.circleMarker(
+                [53.3442, -6.23345],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_69650103afeff6927b8c057d324cc871 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7ed119aa1f17bc4f3c5873458654df17 = $(`<div id="html_7ed119aa1f17bc4f3c5873458654df17" style="width: 100.0%; height: 100.0%;">BENSON STREET: 11.2 bikes</div>`)[0];
+                popup_69650103afeff6927b8c057d324cc871.setContent(html_7ed119aa1f17bc4f3c5873458654df17);
+            
+        
+
+        circle_marker_f8ff5bab2102c9ec7019b122e2950d3d.bindPopup(popup_69650103afeff6927b8c057d324cc871)
+        ;
+
+        
+    
+    
+            circle_marker_f8ff5bab2102c9ec7019b122e2950d3d.bindTooltip(
+                `<div>
+                     BENSON STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_982631a438cf2a5f544bf687df1e9097 = L.circleMarker(
+                [53.3418, -6.23129],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_21d4f05dee38417636d3c06d07bb3996 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a8408a56f8c25bdf8655319484fa84a = $(`<div id="html_7a8408a56f8c25bdf8655319484fa84a" style="width: 100.0%; height: 100.0%;">SOUTH DOCK ROAD: 18.4 bikes</div>`)[0];
+                popup_21d4f05dee38417636d3c06d07bb3996.setContent(html_7a8408a56f8c25bdf8655319484fa84a);
+            
+        
+
+        circle_marker_982631a438cf2a5f544bf687df1e9097.bindPopup(popup_21d4f05dee38417636d3c06d07bb3996)
+        ;
+
+        
+    
+    
+            circle_marker_982631a438cf2a5f544bf687df1e9097.bindTooltip(
+                `<div>
+                     SOUTH DOCK ROAD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b21dd574e645c7997ce6296f5c3dedc6 = L.circleMarker(
+                [53.3478, -6.29243],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_3fb6ad1cd05fcc2ee8cf30fff13aa3a2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aebf6a354bb01eee00dfbaeffebf9057 = $(`<div id="html_aebf6a354bb01eee00dfbaeffebf9057" style="width: 100.0%; height: 100.0%;">HEUSTON BRIDGE (NORTH): 29.2 bikes</div>`)[0];
+                popup_3fb6ad1cd05fcc2ee8cf30fff13aa3a2.setContent(html_aebf6a354bb01eee00dfbaeffebf9057);
+            
+        
+
+        circle_marker_b21dd574e645c7997ce6296f5c3dedc6.bindPopup(popup_3fb6ad1cd05fcc2ee8cf30fff13aa3a2)
+        ;
+
+        
+    
+    
+            circle_marker_b21dd574e645c7997ce6296f5c3dedc6.bindTooltip(
+                `<div>
+                     HEUSTON BRIDGE (NORTH)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e2473b4c7f7427d3bf7d1ab5e6265c67 = L.circleMarker(
+                [53.3466, -6.29692],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_61c05a4be968f4972bbdac5e43f5dce9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_14fcbeac62cdb518f97271400dd8b3d5 = $(`<div id="html_14fcbeac62cdb518f97271400dd8b3d5" style="width: 100.0%; height: 100.0%;">HEUSTON STATION (CENTRAL): 28.8 bikes</div>`)[0];
+                popup_61c05a4be968f4972bbdac5e43f5dce9.setContent(html_14fcbeac62cdb518f97271400dd8b3d5);
+            
+        
+
+        circle_marker_e2473b4c7f7427d3bf7d1ab5e6265c67.bindPopup(popup_61c05a4be968f4972bbdac5e43f5dce9)
+        ;
+
+        
+    
+    
+            circle_marker_e2473b4c7f7427d3bf7d1ab5e6265c67.bindTooltip(
+                `<div>
+                     HEUSTON STATION (CENTRAL)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f1ca49db39cc94362637934f74b0868b = L.circleMarker(
+                [53.347, -6.2978],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_a7173011bec43b33efe2037666d91a5e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0dedb4b58508a3efce2a23f2e695cdb5 = $(`<div id="html_0dedb4b58508a3efce2a23f2e695cdb5" style="width: 100.0%; height: 100.0%;">HEUSTON STATION (CAR PARK): 24.7 bikes</div>`)[0];
+                popup_a7173011bec43b33efe2037666d91a5e.setContent(html_0dedb4b58508a3efce2a23f2e695cdb5);
+            
+        
+
+        circle_marker_f1ca49db39cc94362637934f74b0868b.bindPopup(popup_a7173011bec43b33efe2037666d91a5e)
+        ;
+
+        
+    
+    
+            circle_marker_f1ca49db39cc94362637934f74b0868b.bindTooltip(
+                `<div>
+                     HEUSTON STATION (CAR PARK)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_700c8054f7ae79af0908f93bd682ef57 = L.circleMarker(
+                [53.3439, -6.29706],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_e5e9eb317970adbcd410ae7585108b01 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_99d91b77837c2a798704b1d48238fe41 = $(`<div id="html_99d91b77837c2a798704b1d48238fe41" style="width: 100.0%; height: 100.0%;">ROYAL HOSPITAL: 13.2 bikes</div>`)[0];
+                popup_e5e9eb317970adbcd410ae7585108b01.setContent(html_99d91b77837c2a798704b1d48238fe41);
+            
+        
+
+        circle_marker_700c8054f7ae79af0908f93bd682ef57.bindPopup(popup_e5e9eb317970adbcd410ae7585108b01)
+        ;
+
+        
+    
+    
+            circle_marker_700c8054f7ae79af0908f93bd682ef57.bindTooltip(
+                `<div>
+                     ROYAL HOSPITAL
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6497e009ab72573de80191606942bce3 = L.circleMarker(
+                [53.3418, -6.30509],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_1e16cb259f68589dfaa9150669d2e978 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f4f2e1daed35d8e4e342ffc59813dfd3 = $(`<div id="html_f4f2e1daed35d8e4e342ffc59813dfd3" style="width: 100.0%; height: 100.0%;">KILMAINHAM LANE: 10.4 bikes</div>`)[0];
+                popup_1e16cb259f68589dfaa9150669d2e978.setContent(html_f4f2e1daed35d8e4e342ffc59813dfd3);
+            
+        
+
+        circle_marker_6497e009ab72573de80191606942bce3.bindPopup(popup_1e16cb259f68589dfaa9150669d2e978)
+        ;
+
+        
+    
+    
+            circle_marker_6497e009ab72573de80191606942bce3.bindTooltip(
+                `<div>
+                     KILMAINHAM LANE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bf872584c87ff287afb1683c8d92917a = L.circleMarker(
+                [53.3421, -6.31002],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_2c3944f40f6c4591d8c7ec277101ba54 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1e9b8a3a639861ddfdf600358fc6cb90 = $(`<div id="html_1e9b8a3a639861ddfdf600358fc6cb90" style="width: 100.0%; height: 100.0%;">KILMAINHAM GAOL: 17.4 bikes</div>`)[0];
+                popup_2c3944f40f6c4591d8c7ec277101ba54.setContent(html_1e9b8a3a639861ddfdf600358fc6cb90);
+            
+        
+
+        circle_marker_bf872584c87ff287afb1683c8d92917a.bindPopup(popup_2c3944f40f6c4591d8c7ec277101ba54)
+        ;
+
+        
+    
+    
+            circle_marker_bf872584c87ff287afb1683c8d92917a.bindTooltip(
+                `<div>
+                     KILMAINHAM GAOL
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7e3a5ca4993025649846e7314a863d5f = L.circleMarker(
+                [53.3415, -6.25685],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_e9d3835164352b4964c9362929bbeeec = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3e765e5fca8d1e0be1d7c7e1fe0ee4f7 = $(`<div id="html_3e765e5fca8d1e0be1d7c7e1fe0ee4f7" style="width: 100.0%; height: 100.0%;">FREDERICK STREET SOUTH: 10.6 bikes</div>`)[0];
+                popup_e9d3835164352b4964c9362929bbeeec.setContent(html_3e765e5fca8d1e0be1d7c7e1fe0ee4f7);
+            
+        
+
+        circle_marker_7e3a5ca4993025649846e7314a863d5f.bindPopup(popup_e9d3835164352b4964c9362929bbeeec)
+        ;
+
+        
+    
+    
+            circle_marker_7e3a5ca4993025649846e7314a863d5f.bindTooltip(
+                `<div>
+                     FREDERICK STREET SOUTH
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_264bbac48d56942edadee1364d620f86 = L.circleMarker(
+                [53.3466, -6.24615],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_06ca4bc8ac3a0511434dd6c3b1fc6841 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ad531a9c4e74bf2c4d08ad8947fc7188 = $(`<div id="html_ad531a9c4e74bf2c4d08ad8947fc7188" style="width: 100.0%; height: 100.0%;">CITY QUAY: 11.4 bikes</div>`)[0];
+                popup_06ca4bc8ac3a0511434dd6c3b1fc6841.setContent(html_ad531a9c4e74bf2c4d08ad8947fc7188);
+            
+        
+
+        circle_marker_264bbac48d56942edadee1364d620f86.bindPopup(popup_06ca4bc8ac3a0511434dd6c3b1fc6841)
+        ;
+
+        
+    
+    
+            circle_marker_264bbac48d56942edadee1364d620f86.bindTooltip(
+                `<div>
+                     CITY QUAY
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_92b77205906faca12537c127451f6856 = L.circleMarker(
+                [53.3471, -6.29204],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_435593210fd198b6620d04cb2a4aa975 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_edb78ee82b94d43bcecf5d82de558055 = $(`<div id="html_edb78ee82b94d43bcecf5d82de558055" style="width: 100.0%; height: 100.0%;">HEUSTON BRIDGE (SOUTH): 16.4 bikes</div>`)[0];
+                popup_435593210fd198b6620d04cb2a4aa975.setContent(html_edb78ee82b94d43bcecf5d82de558055);
+            
+        
+
+        circle_marker_92b77205906faca12537c127451f6856.bindPopup(popup_435593210fd198b6620d04cb2a4aa975)
+        ;
+
+        
+    
+    
+            circle_marker_92b77205906faca12537c127451f6856.bindTooltip(
+                `<div>
+                     HEUSTON BRIDGE (SOUTH)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a7460e5203f82e0cbf96d01e01ed0453 = L.circleMarker(
+                [53.3503, -6.27351],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_6ad19470eda85f99dc3ed0baa02a4508 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e0e878ba77379f951600ba93cc704525 = $(`<div id="html_e0e878ba77379f951600ba93cc704525" style="width: 100.0%; height: 100.0%;">KING STREET NORTH: 8.1 bikes</div>`)[0];
+                popup_6ad19470eda85f99dc3ed0baa02a4508.setContent(html_e0e878ba77379f951600ba93cc704525);
+            
+        
+
+        circle_marker_a7460e5203f82e0cbf96d01e01ed0453.bindPopup(popup_6ad19470eda85f99dc3ed0baa02a4508)
+        ;
+
+        
+    
+    
+            circle_marker_a7460e5203f82e0cbf96d01e01ed0453.bindTooltip(
+                `<div>
+                     KING STREET NORTH
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_862a7f33c271e0986fd8f27720b234d2 = L.circleMarker(
+                [53.3549, -6.26942],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_80a8d3b18693ea3e2ae904fe0a061f9c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9387db45505a507401215b49c099a7b1 = $(`<div id="html_9387db45505a507401215b49c099a7b1" style="width: 100.0%; height: 100.0%;">WESTERN WAY: 10.7 bikes</div>`)[0];
+                popup_80a8d3b18693ea3e2ae904fe0a061f9c.setContent(html_9387db45505a507401215b49c099a7b1);
+            
+        
+
+        circle_marker_862a7f33c271e0986fd8f27720b234d2.bindPopup(popup_80a8d3b18693ea3e2ae904fe0a061f9c)
+        ;
+
+        
+    
+    
+            circle_marker_862a7f33c271e0986fd8f27720b234d2.bindTooltip(
+                `<div>
+                     WESTERN WAY
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6a398594c7010954bf493cacff83a7d4 = L.circleMarker(
+                [53.3547, -6.27868],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_30a5a0c12294cf4ccd1421f57b887f81 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ff418ed926f5e5f35f3b406d0d97da13 = $(`<div id="html_ff418ed926f5e5f35f3b406d0d97da13" style="width: 100.0%; height: 100.0%;">GRANGEGORMAN LOWER (SOUTH): 4.7 bikes</div>`)[0];
+                popup_30a5a0c12294cf4ccd1421f57b887f81.setContent(html_ff418ed926f5e5f35f3b406d0d97da13);
+            
+        
+
+        circle_marker_6a398594c7010954bf493cacff83a7d4.bindPopup(popup_30a5a0c12294cf4ccd1421f57b887f81)
+        ;
+
+        
+    
+    
+            circle_marker_6a398594c7010954bf493cacff83a7d4.bindTooltip(
+                `<div>
+                     GRANGEGORMAN LOWER (SOUTH)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1729b80882f2767846eecd9a9836b758 = L.circleMarker(
+                [53.3552, -6.27842],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_19e6988dd92c0dac18d3e0aae7f43b11 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_64b6584ec0f2815482e1d892bea3c89b = $(`<div id="html_64b6584ec0f2815482e1d892bea3c89b" style="width: 100.0%; height: 100.0%;">GRANGEGORMAN LOWER (CENTRAL): 4.8 bikes</div>`)[0];
+                popup_19e6988dd92c0dac18d3e0aae7f43b11.setContent(html_64b6584ec0f2815482e1d892bea3c89b);
+            
+        
+
+        circle_marker_1729b80882f2767846eecd9a9836b758.bindPopup(popup_19e6988dd92c0dac18d3e0aae7f43b11)
+        ;
+
+        
+    
+    
+            circle_marker_1729b80882f2767846eecd9a9836b758.bindTooltip(
+                `<div>
+                     GRANGEGORMAN LOWER (CENTRAL)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f5b01865c63127784728ad8e65e6507a = L.circleMarker(
+                [53.356, -6.27838],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_8a3ae060cb2faad9c6e8641b048a2f53 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_232668dfb59426624fcacf2d27ebc8c6 = $(`<div id="html_232668dfb59426624fcacf2d27ebc8c6" style="width: 100.0%; height: 100.0%;">GRANGEGORMAN LOWER (NORTH): 7.9 bikes</div>`)[0];
+                popup_8a3ae060cb2faad9c6e8641b048a2f53.setContent(html_232668dfb59426624fcacf2d27ebc8c6);
+            
+        
+
+        circle_marker_f5b01865c63127784728ad8e65e6507a.bindPopup(popup_8a3ae060cb2faad9c6e8641b048a2f53)
+        ;
+
+        
+    
+    
+            circle_marker_f5b01865c63127784728ad8e65e6507a.bindTooltip(
+                `<div>
+                     GRANGEGORMAN LOWER (NORTH)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3aa9cb89d915e81d3f5dda5ba1d2cfcb = L.circleMarker(
+                [53.3589, -6.28034],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_26e803a5042b410275889a4ba7b24b96 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_70255808b3993e76c7becb0eaf516ef7 = $(`<div id="html_70255808b3993e76c7becb0eaf516ef7" style="width: 100.0%; height: 100.0%;">RATHDOWN ROAD: 12.0 bikes</div>`)[0];
+                popup_26e803a5042b410275889a4ba7b24b96.setContent(html_70255808b3993e76c7becb0eaf516ef7);
+            
+        
+
+        circle_marker_3aa9cb89d915e81d3f5dda5ba1d2cfcb.bindPopup(popup_26e803a5042b410275889a4ba7b24b96)
+        ;
+
+        
+    
+    
+            circle_marker_3aa9cb89d915e81d3f5dda5ba1d2cfcb.bindTooltip(
+                `<div>
+                     RATHDOWN ROAD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_85ba0e4057ee8cd79d2c81de73f9a61f = L.circleMarker(
+                [53.3592, -6.28187],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_6578da6ee44920fced4b82b7778e959b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0efb9b595e04c5d598ff6f8015a7006b = $(`<div id="html_0efb9b595e04c5d598ff6f8015a7006b" style="width: 100.0%; height: 100.0%;">CHARLEVILLE ROAD: 11.6 bikes</div>`)[0];
+                popup_6578da6ee44920fced4b82b7778e959b.setContent(html_0efb9b595e04c5d598ff6f8015a7006b);
+            
+        
+
+        circle_marker_85ba0e4057ee8cd79d2c81de73f9a61f.bindPopup(popup_6578da6ee44920fced4b82b7778e959b)
+        ;
+
+        
+    
+    
+            circle_marker_85ba0e4057ee8cd79d2c81de73f9a61f.bindTooltip(
+                `<div>
+                     CHARLEVILLE ROAD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_61bda6c5b99b6dac5cf43f1087f08b89 = L.circleMarker(
+                [53.3594, -6.27614],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_35f40250b3b1c1bfc0fc1d4701786110 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_31410124d1ac8c948a948f2405e702c2 = $(`<div id="html_31410124d1ac8c948a948f2405e702c2" style="width: 100.0%; height: 100.0%;">AVONDALE ROAD: 12.7 bikes</div>`)[0];
+                popup_35f40250b3b1c1bfc0fc1d4701786110.setContent(html_31410124d1ac8c948a948f2405e702c2);
+            
+        
+
+        circle_marker_61bda6c5b99b6dac5cf43f1087f08b89.bindPopup(popup_35f40250b3b1c1bfc0fc1d4701786110)
+        ;
+
+        
+    
+    
+            circle_marker_61bda6c5b99b6dac5cf43f1087f08b89.bindTooltip(
+                `<div>
+                     AVONDALE ROAD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c82951563638736b9a9a17927115a256 = L.circleMarker(
+                [53.3533, -6.24932],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_703ef24237802b8db8bd8838b0d45275 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2afbd7b0229b51ce6b168f1aa46a8f14 = $(`<div id="html_2afbd7b0229b51ce6b168f1aa46a8f14" style="width: 100.0%; height: 100.0%;">BUCKINGHAM STREET LOWER: 18.8 bikes</div>`)[0];
+                popup_703ef24237802b8db8bd8838b0d45275.setContent(html_2afbd7b0229b51ce6b168f1aa46a8f14);
+            
+        
+
+        circle_marker_c82951563638736b9a9a17927115a256.bindPopup(popup_703ef24237802b8db8bd8838b0d45275)
+        ;
+
+        
+    
+    
+            circle_marker_c82951563638736b9a9a17927115a256.bindTooltip(
+                `<div>
+                     BUCKINGHAM STREET LOWER
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3b23810e3e92eb6a7ba806e4dd5300d7 = L.circleMarker(
+                [53.3563, -6.27372],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_691484213031d0302ac93cb582aab8e6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_77dbddd753b8b6cc84d4f64ca8a30807 = $(`<div id="html_77dbddd753b8b6cc84d4f64ca8a30807" style="width: 100.0%; height: 100.0%;">PHIBSBOROUGH ROAD: 13.5 bikes</div>`)[0];
+                popup_691484213031d0302ac93cb582aab8e6.setContent(html_77dbddd753b8b6cc84d4f64ca8a30807);
+            
+        
+
+        circle_marker_3b23810e3e92eb6a7ba806e4dd5300d7.bindPopup(popup_691484213031d0302ac93cb582aab8e6)
+        ;
+
+        
+    
+    
+            circle_marker_3b23810e3e92eb6a7ba806e4dd5300d7.bindTooltip(
+                `<div>
+                     PHIBSBOROUGH ROAD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_787f6100dfb52570d50959ce7e0c5407 = L.circleMarker(
+                [53.3567, -6.25636],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_fbcdd84c30b38923be2e813ca3f040a1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f2f203ee308349fa80e92dbffd82a382 = $(`<div id="html_f2f203ee308349fa80e92dbffd82a382" style="width: 100.0%; height: 100.0%;">MOUNTJOY SQUARE EAST: 3.8 bikes</div>`)[0];
+                popup_fbcdd84c30b38923be2e813ca3f040a1.setContent(html_f2f203ee308349fa80e92dbffd82a382);
+            
+        
+
+        circle_marker_787f6100dfb52570d50959ce7e0c5407.bindPopup(popup_fbcdd84c30b38923be2e813ca3f040a1)
+        ;
+
+        
+    
+    
+            circle_marker_787f6100dfb52570d50959ce7e0c5407.bindTooltip(
+                `<div>
+                     MOUNTJOY SQUARE EAST
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_042a26ecb116e60e977ca0955eaacaf3 = L.circleMarker(
+                [53.3578, -6.25156],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_eae279f91ba81d608144c5ed4fb62f71 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4c6fc56b34291c4043071067c339dc0e = $(`<div id="html_4c6fc56b34291c4043071067c339dc0e" style="width: 100.0%; height: 100.0%;">NORTH CIRCULAR ROAD (O'CONNELL'S): 15.9 bikes</div>`)[0];
+                popup_eae279f91ba81d608144c5ed4fb62f71.setContent(html_4c6fc56b34291c4043071067c339dc0e);
+            
+        
+
+        circle_marker_042a26ecb116e60e977ca0955eaacaf3.bindPopup(popup_eae279f91ba81d608144c5ed4fb62f71)
+        ;
+
+        
+    
+    
+            circle_marker_042a26ecb116e60e977ca0955eaacaf3.bindTooltip(
+                `<div>
+                     NORTH CIRCULAR ROAD (O'CONNELL'S)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_709ccf82258070239408a07ea00b5ea5 = L.circleMarker(
+                [53.3386, -6.24861],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_ca21c0a68f4fa685f44d3feb7766bde3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_56ce57f4b2926aaaa5645452c268a483 = $(`<div id="html_56ce57f4b2926aaaa5645452c268a483" style="width: 100.0%; height: 100.0%;">MERRION SQUARE SOUTH: 5.0 bikes</div>`)[0];
+                popup_ca21c0a68f4fa685f44d3feb7766bde3.setContent(html_56ce57f4b2926aaaa5645452c268a483);
+            
+        
+
+        circle_marker_709ccf82258070239408a07ea00b5ea5.bindPopup(popup_ca21c0a68f4fa685f44d3feb7766bde3)
+        ;
+
+        
+    
+    
+            circle_marker_709ccf82258070239408a07ea00b5ea5.bindTooltip(
+                `<div>
+                     MERRION SQUARE SOUTH
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e33f127f6733b66b647a47fd5b348947 = L.circleMarker(
+                [53.3337, -6.24834],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_1aedcb037790cce77b9009638d87c858 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eafaf930e79bd956c115f05cc1bb111b = $(`<div id="html_eafaf930e79bd956c115f05cc1bb111b" style="width: 100.0%; height: 100.0%;">WILTON TERRACE (PARK): 9.3 bikes</div>`)[0];
+                popup_1aedcb037790cce77b9009638d87c858.setContent(html_eafaf930e79bd956c115f05cc1bb111b);
+            
+        
+
+        circle_marker_e33f127f6733b66b647a47fd5b348947.bindPopup(popup_1aedcb037790cce77b9009638d87c858)
+        ;
+
+        
+    
+    
+            circle_marker_e33f127f6733b66b647a47fd5b348947.bindTooltip(
+                `<div>
+                     WILTON TERRACE (PARK)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_30f61022dde446049ccf802e8e3e7688 = L.circleMarker(
+                [53.3548, -6.24758],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_ef0afb93438b7a0a3a9255d92b99e1d0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1b45ec3982f7a3b4d7ddf8713ec43b23 = $(`<div id="html_1b45ec3982f7a3b4d7ddf8713ec43b23" style="width: 100.0%; height: 100.0%;">KILLARNEY STREET: 20.6 bikes</div>`)[0];
+                popup_ef0afb93438b7a0a3a9255d92b99e1d0.setContent(html_1b45ec3982f7a3b4d7ddf8713ec43b23);
+            
+        
+
+        circle_marker_30f61022dde446049ccf802e8e3e7688.bindPopup(popup_ef0afb93438b7a0a3a9255d92b99e1d0)
+        ;
+
+        
+    
+    
+            circle_marker_30f61022dde446049ccf802e8e3e7688.bindTooltip(
+                `<div>
+                     KILLARNEY STREET
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a69445a1c5af32e42a5aedfcc40b1b93 = L.circleMarker(
+                [53.3547, -6.27231],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_c775c4ac239a26a72b9c393a05e85634 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7ade848fcb0698f3e8c4d4b5d1215c85 = $(`<div id="html_7ade848fcb0698f3e8c4d4b5d1215c85" style="width: 100.0%; height: 100.0%;">BROADSTONE: 4.5 bikes</div>`)[0];
+                popup_c775c4ac239a26a72b9c393a05e85634.setContent(html_7ade848fcb0698f3e8c4d4b5d1215c85);
+            
+        
+
+        circle_marker_a69445a1c5af32e42a5aedfcc40b1b93.bindPopup(popup_c775c4ac239a26a72b9c393a05e85634)
+        ;
+
+        
+    
+    
+            circle_marker_a69445a1c5af32e42a5aedfcc40b1b93.bindTooltip(
+                `<div>
+                     BROADSTONE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a17a7a82e5e96f936956ec61d0baa50a = L.circleMarker(
+                [53.3437, -6.23175],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_425869c43c2d26c47c96ad4c7aefc21e);
+        
+    
+        var popup_25a1163f82742293e2ba2e769807e3f6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_43931119e44fae9244c2ea2e3d2420ed = $(`<div id="html_43931119e44fae9244c2ea2e3d2420ed" style="width: 100.0%; height: 100.0%;">HANOVER QUAY EAST: 15.7 bikes</div>`)[0];
+                popup_25a1163f82742293e2ba2e769807e3f6.setContent(html_43931119e44fae9244c2ea2e3d2420ed);
+            
+        
+
+        circle_marker_a17a7a82e5e96f936956ec61d0baa50a.bindPopup(popup_25a1163f82742293e2ba2e769807e3f6)
+        ;
+
+        
+    
+    
+            circle_marker_a17a7a82e5e96f936956ec61d0baa50a.bindTooltip(
+                `<div>
+                     HANOVER QUAY EAST
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            map_425869c43c2d26c47c96ad4c7aefc21e.fitBounds(
+                [[53.3301, -6.31002], [53.36, -6.23085]],
+                {}
+            );
+        
+</script>
+</html>
