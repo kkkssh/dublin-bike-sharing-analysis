@@ -62,6 +62,13 @@ The dataset contains 1,391 records for each of the 114 stations. A capacity inco
 - Average available bike stands peaked at 5 PM (20.42 stands).
 - Average available bike stands reached their lowest levels between 3 AM and 4 AM (19.45 stands).
 
+
+#### Morning Peak vs Other Hours
+![Morning Peak Comparison](outputs/morning_peak_comparison.png)
+- Average bike availability during the morning peak (7-9 AM) was 11.62 bikes.
+- During other hours, average bike availability was 12.07 bikes.
+- Morning peak availability was approximately 3.7% lower than during other hours.
+
 <br>
 
 ### Station-Level Analysis

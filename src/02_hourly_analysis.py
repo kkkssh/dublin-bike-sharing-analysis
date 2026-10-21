@@ -112,3 +112,38 @@ plt.tight_layout()
 plt.savefig("outputs/hourly_bike_availability_comparison.png", dpi=300)
 
 plt.show()
+
+
+
+# Compare bike availability during morning peak hours and other hours
+
+# Define morning peak hours as 7 AM to 9 AM
+morning_peak = df[df["HOUR"].between(7, 9)]
+other_hours = df[~df["HOUR"].between(7, 9)]
+
+# Calculate average available bikes
+morning_avg = morning_peak["AVAILABLE_BIKES"].mean()
+other_avg = other_hours["AVAILABLE_BIKES"].mean()
+
+print("\n=== Morning Peak vs Other Hours ===")
+print(f"Morning peak (7 AM-9 AM): {morning_avg:.2f} bikes")
+print(f"Other hours: {other_avg:.2f} bikes")
+
+# Plot the comparison
+plt.figure(figsize=(7, 5))
+
+plt.bar([0, 0.3], [morning_avg, other_avg], width=0.10)
+
+plt.xticks([0, 0.3], ["Morning Peak\n(7-9 AM)", "Other Hours"])
+
+plt.xlim(-0.15, 0.45)
+
+plt.title("Average Bike Availability: Morning Peak vs Other Hours")
+plt.ylabel("Average Available Bikes")
+
+plt.tight_layout()
+
+plt.savefig("outputs/morning_peak_comparison.png", dpi=300)
+
+plt.show()
+
