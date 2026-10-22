@@ -84,3 +84,46 @@ print(station_stands_avg.sort_values(ascending=False).head(10).round(2))
 
 print("\n=== Lowest Average Available Bike Stands ===")
 print(station_stands_avg.sort_values().head(10).round(2))
+
+
+
+# Compare hourly bike availability at selected stations
+
+# Select the top 3 and bottom 3 stations by average bike availability
+selected_stations = pd.concat(
+    [
+        station_avg.sort_values(ascending=False).head(3),
+        station_avg.sort_values().head(3),
+    ]
+).index
+
+# Calculate average available bikes by station and hour
+df["TIME"] = pd.to_datetime(df["TIME"])
+df["HOUR"] = df["TIME"].dt.hour
+
+hourly_station_avg = (
+    df[df["NAME"].isin(selected_stations)]
+    .groupby(["HOUR", "NAME"])["AVAILABLE_BIKES"]
+    .mean()
+    .unstack()
+)
+
+# Plot hourly bike availability for the selected stations
+plt.figure(figsize=(12, 6))
+
+for station in hourly_station_avg.columns:
+    plt.plot(hourly_station_avg.index, hourly_station_avg[station], label=station)
+
+
+plt.title("Hourly Bike Availability at Selected Stations")
+plt.xlabel("Hour of Day")
+plt.ylabel("Average Available Bikes")
+plt.xticks(range(0, 24))
+plt.legend(fontsize=9)
+
+plt.tight_layout()
+
+# Save the graph
+plt.savefig("outputs/hourly_station_bike_availability.png", dpi=300)
+
+plt.show()

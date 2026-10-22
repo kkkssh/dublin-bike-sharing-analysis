@@ -3,9 +3,9 @@ A Python project analyzing bike availability patterns by time and station using 
 
 
 ## Project Overview
-This project analyses Dublin's bike-sharing station data from February 2024 using Python, Pandas, and Matplotlib.
+This project analyses Dublin's bike-sharing station data from February 2024 using Python, Pandas, Matplotlib, and Folium.
 
-I looked at how bike availability changed throughout the day, compared availability across stations, and plotted station locations. I also checked the dataset for missing values, duplicates, and inconsistencies in station capacity.
+I explored hourly bike availability, compared availability across stations and time periods, and visualised station locations using static and interactive maps. I also checked the dataset for missing values, duplicates, and inconsistencies in station capacity.
 
 
 ## Dataset
@@ -86,6 +86,14 @@ The dataset contains 1,391 records for each of the 114 stations. A capacity inco
 - Highest average number of available bike stands: `MOUNTJOY SQUARE EAST` - 36.25
 - Lowest average number of available bike stands: `DAME STREET` - 4.38
 
+
+#### Hourly Bike Availability at Selected Stations
+![Hourly Bike Availability at Selected Stations](outputs/hourly_station_bike_availability.png)
+- `HEUSTON STATION (CENTRAL)` showed a sharp drop in average bike availability after 8 AM, followed by a recovery after 5 PM.
+- `HEUSTON BRIDGE (NORTH)` showed a similar pattern, with lower availability during the morning and a recovery in the evening.
+- `TALBOT STREET` had relatively stable bike availability throughout the day.
+- The other three stations had lower average bike availability and smaller fluctuations throughout the day.
+
 <br>
 
 ### Geographic Visualisation
@@ -129,6 +137,8 @@ Click a station marker to view its name and average available bikes.
 - Average bike availability was relatively high during the early morning, peaking at 4 AM.
 - Average bike availability was lowest between 8 AM and 9 AM.
 - Available bikes and available bike stands generally showed opposite patterns, but their totals did not always match station capacity.
+- `HEUSTON BRIDGE (NORTH)` had the highest average bike availability (29.24 bikes), while `ST. STEPHEN'S GREEN SOUTH` had the lowest (1.94 bikes).
+- Some stations showed larger changes in bike availability throughout the day than others.
 
 
 ## Limitations
