@@ -3,7 +3,7 @@ A Python project analyzing bike availability patterns by time and station using 
 
 
 ## Project Overview
-This project analyses Dublin's bike-sharing station data from February 2024 using Python, Pandas, Matplotlib, and Folium.
+This project analyses Dublin's bike-sharing station data from February 2024 using Python, Pandas, Matplotlib, Folium, and QGIS.
 
 I explored hourly bike availability, compared availability across stations and time periods, and visualised station locations using static and interactive maps. I also checked the dataset for missing values, duplicates, and inconsistencies in station capacity.
 
@@ -133,6 +133,21 @@ The interactive map displays 114 Dublin bike stations. Marker colours represent 
 Click a station marker to view its name and average available bikes.
 
 
+## QGIS Spatial Visualization
+
+Created a station-level map of Dublin bike-sharing availability using QGIS.
+
+![Dublin Bike-Sharing Availability Map](screenshots/dublin_bike_availability_map.png)
+
+Bike availability rate was calculated as:
+
+`Bike Availability Rate (%) = (AVAILABLE_BIKES / BIKE_STANDS) * 100`
+
+- Calculated bike availability rates as a percentage of total station capacity
+- Used graduated colours to show availability levels from 0% to 100%
+- Visualised the spatial distribution of bike availability across central Dublin
+
+
 ## Key Findings
 - Average bike availability was relatively high during the early morning, peaking at 4 AM.
 - Average bike availability was lowest between 8 AM and 9 AM.
@@ -153,6 +168,7 @@ Click a station marker to view its name and average available bikes.
 - Pandas
 - Matplotlib
 - Folium
+- QGIS
 
 
 ## Data Source
