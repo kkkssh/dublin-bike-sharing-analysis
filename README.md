@@ -29,7 +29,7 @@ The dataset contains bike station status snapshots recorded throughout February 
 | `LONGITUDE` | East–west geographic coordinate | Geographic visualisation |
 
 
-## Data Cleaning and Quality Checks
+## Data Quality Checks
 
 | Check | Result |
 |---|---|
@@ -133,7 +133,7 @@ The interactive map displays 114 Dublin bike stations. Marker colours represent 
 Click a station marker to view its name and average available bikes.
 
 
-## QGIS Spatial Visualization
+## QGIS Spatial Visualisation
 
 Created a station-level map of Dublin bike-sharing availability using QGIS.
 
@@ -143,9 +143,9 @@ Bike availability rate was calculated as:
 
 `Bike Availability Rate (%) = (AVAILABLE_BIKES / BIKE_STANDS) * 100`
 
-- Calculated bike availability rates as a percentage of total station capacity
-- Used graduated colours to show availability levels from 0% to 100%
-- Visualised the spatial distribution of bike availability across central Dublin
+- Calculated bike availability rates as a percentage of total station capacity.
+- Used graduated colours to show availability levels from 0% to 100%.
+- Visualised the spatial distribution of bike availability across central Dublin.
 
 
 ## Key Findings
